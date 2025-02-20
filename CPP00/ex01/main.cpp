@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 19:43:09 by mbany             #+#    #+#             */
-/*   Updated: 2025/02/20 19:45:59 by mbany            ###   ########.fr       */
+/*   Updated: 2025/02/20 19:50:52 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,15 @@ int main(void)
 		std::cout << "$ -> ";
 		if (std::getline(std::cin, input) == 0)
 			return 0;
+		else if (input == "ADD")
+			PhoneBook.addContact();
+		else if (input == "SEARCH")
+			PhoneBook.searchContact();
+		else if (input == "EXIT")
+			return 0;
+		else
+			std::cout << "error: wrong input" << std::endl;
+		
 	}
 	return 0;
 }
