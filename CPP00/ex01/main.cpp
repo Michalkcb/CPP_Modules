@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 19:43:09 by mbany             #+#    #+#             */
-/*   Updated: 2025/02/20 19:41:44 by mbany            ###   ########.fr       */
+/*   Updated: 2025/02/20 19:45:59 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ int main(void)
 
 	while (1)
 	{
-
+		std::cout << "$ -> ";
+		if (std::getline(std::cin, input) == 0)
+			return 0;
 	}
 	return 0;
 }
