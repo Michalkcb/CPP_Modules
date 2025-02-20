@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 15:45:08 by mbany             #+#    #+#             */
-/*   Updated: 2025/02/18 19:11:51 by mbany            ###   ########.fr       */
+/*   Updated: 2025/02/20 19:52:20 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,14 @@ Give a relevant name to your executable.
 PhoneBook::PhoneBook()
 {
 	nb_Contact = 0;
+}
+int PhoneBook::addContact()
+{
+	std::cout << "adding contact" << std::endl;
+	return 0;
+}
+int PhoneBook::searchContact()
+{
+	std::cout << "searching contact" << std::endl;
+	return 0;
 }
