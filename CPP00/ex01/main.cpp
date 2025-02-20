@@ -6,11 +6,12 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 19:43:09 by mbany             #+#    #+#             */
-/*   Updated: 2025/02/20 19:50:52 by mbany            ###   ########.fr       */
+/*   Updated: 2025/02/20 19:59:43 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "phonebook.hpp"
+
 void init_menu()
 {
 	std::cout << " "<< std::endl;
@@ -23,9 +24,7 @@ int main(void)
 {
 	PhoneBook PhoneBook;
 	std::string input;
-	
-	init_menu(); //set_homepage
-
+	init_menu();
 	while (1)
 	{
 		std::cout << "$ -> ";
@@ -39,7 +38,6 @@ int main(void)
 			return 0;
 		else
 			std::cout << "error: wrong input" << std::endl;
-		
 	}
 	return 0;
 }
