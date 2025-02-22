@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 15:45:08 by mbany             #+#    #+#             */
-/*   Updated: 2025/02/20 20:01:26 by mbany            ###   ########.fr       */
+/*   Updated: 2025/02/22 16:08:30 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,20 @@ int PhoneBook::addContact()
 }
 int PhoneBook::searchContact()
 {
-	std::cout << "searching contact" << std::endl;
+	if (PhoneBook::nb_Contact == 0){
+		std::cout << "Error: No Contact in memory" << std::endl;
+		return (-1);
+	}
+	init_menu();
+	int i = 0;
+	std::string input;
+    std::cout << "|  Index   |First Name| Last Name| Nickname |\n";
+
+	while (i < PhoneBook::nb_Contact)
+	{
+		std::cout << "searching contact" << std::endl;
+		i++;
+	}
+	
 	return 0;
 }
