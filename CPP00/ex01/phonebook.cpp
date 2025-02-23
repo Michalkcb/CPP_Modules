@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 15:45:08 by mbany             #+#    #+#             */
-/*   Updated: 2025/02/23 16:52:49 by mbany            ###   ########.fr       */
+/*   Updated: 2025/02/23 17:03:39 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,10 @@ stops when the user inputs EXIT.
 Give a relevant name to your executable.
 */
 # include "phonebook.hpp"
+
+std::string Contact::getFirstName() const{
+	return mFrstName;
+}
 
 PhoneBook::PhoneBook()
 {
