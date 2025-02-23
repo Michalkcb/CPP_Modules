@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 15:45:08 by mbany             #+#    #+#             */
-/*   Updated: 2025/02/22 16:08:30 by mbany            ###   ########.fr       */
+/*   Updated: 2025/02/23 16:52:49 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,15 @@ int PhoneBook::searchContact()
 
 	while (i < PhoneBook::nb_Contact)
 	{
-		std::cout << "searching contact" << std::endl;
+		std::cout << "\n";
+		std::cout << std::setw(10) << user[i].get_id()+1;
+		std::cout << "|";
+		print_Contact(user[i].getFirstName())
+		std::cout << "|";
+		print_Contact(user[i].getLastName())
+		std::cout << "|";
+		print_Contact(user[i].getNickName())
+		std::cout << "|";
 		i++;
 	}
 	
