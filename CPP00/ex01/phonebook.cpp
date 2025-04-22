@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 15:45:08 by mbany             #+#    #+#             */
-/*   Updated: 2025/02/23 17:03:39 by mbany            ###   ########.fr       */
+/*   Updated: 2025/04/22 19:47:26 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +58,19 @@ Give a relevant name to your executable.
 */
 # include "phonebook.hpp"
 
-std::string Contact::getFirstName() const{
-	return mFrstName;
-}
-
 PhoneBook::PhoneBook()
 {
 	nb_Contact = 0;
 }
 int PhoneBook::addContact()
 {
-	std::cout << "adding contact" << std::endl;
+	// std::cout << "adsgsdging contact" << std::endl;
+	if (PhoneBook::nb_Contact == 8)
+	{
+		std::cout << "PhoneBook is full, replacing the oldest contact" << std::endl << "Overwrite the last one" << std::endl;
+		std::string input;
+		
+	}
 	return 0;
 }
 int PhoneBook::searchContact()
@@ -87,11 +89,11 @@ int PhoneBook::searchContact()
 		std::cout << "\n";
 		std::cout << std::setw(10) << user[i].get_id()+1;
 		std::cout << "|";
-		print_Contact(user[i].getFirstName())
+		print_Contact(user[i].getFirstName());
 		std::cout << "|";
-		print_Contact(user[i].getLastName())
+		print_Contact(user[i].getLastName());
 		std::cout << "|";
-		print_Contact(user[i].getNickName())
+		print_Contact(user[i].getNickName());
 		std::cout << "|";
 		i++;
 	}
