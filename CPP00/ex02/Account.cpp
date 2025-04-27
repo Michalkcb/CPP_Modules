@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 17:05:21 by mbany             #+#    #+#             */
-/*   Updated: 2025/04/27 14:05:24 by mbany            ###   ########.fr       */
+/*   Updated: 2025/04/27 16:02:38 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void Account::displayStatus() const
 {
 	_displayTimestamp();
 	std::cout	<< "index:" << _accountIndex 
-				<< ";total:" << _amount
+				<< ";amount:" << _amount
 				<< ";deposit:" << _nbDeposits
 				<< ";withdrwawls:" << _nbWithdrawals
 				<< std::endl;
@@ -74,7 +74,7 @@ void Account::makeDeposit(int deposit)
 	_displayTimestamp();
 	
 	std::cout 	<< "index:" << _accountIndex
-				<< ";p-amount:" << _amount
+				<< ";p_amount:" << _amount
 				<< ";deposit:" << deposit;
 	_amount += deposit;
 	_nbDeposits++;
