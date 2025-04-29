@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 16:08:10 by mbany             #+#    #+#             */
-/*   Updated: 2025/04/27 16:24:47 by mbany            ###   ########.fr       */
+/*   Updated: 2025/04/29 19:57:27 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ private:
 	std::string name;
 	
 public:
+	Zombie();
 	Zombie(std::string name);
 	~Zombie();
 	
+	void setName(std::string name);
 	void announce(void) const;
 };
 
