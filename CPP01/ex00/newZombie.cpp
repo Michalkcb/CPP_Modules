@@ -6,7 +6,13 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 16:08:01 by mbany             #+#    #+#             */
-/*   Updated: 2025/04/27 16:08:02 by mbany            ###   ########.fr       */
+/*   Updated: 2025/04/27 16:30:54 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
+
+Zombie* newZombie(std::string name)
+{
+	return new Zombie(name);
+}
