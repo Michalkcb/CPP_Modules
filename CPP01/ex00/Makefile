@@ -6,7 +6,7 @@
 #    By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/26 17:05:48 by mbany             #+#    #+#              #
-#    Updated: 2025/04/27 16:27:49 by mbany            ###   ########.fr        #
+#    Updated: 2025/04/29 19:48:08 by mbany            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ all: $(NAME)
 
 $(NAME): $(SRC)
 	$(CC) $(CFLAGS) -o $(NAME) $(SRC)
+	@echo "© copyright by mbany 2025"
 
 clean:
 	rm -f $(NAME)

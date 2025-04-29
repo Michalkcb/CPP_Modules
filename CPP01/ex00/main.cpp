@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 16:07:12 by mbany             #+#    #+#             */
-/*   Updated: 2025/04/27 16:38:08 by mbany            ###   ########.fr       */
+/*   Updated: 2025/04/29 19:40:41 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,49 @@ void randomChump(std::string name);
 
 int main(void)
 {
-	Zombie* heapZombie = newZombie("HeapZombie");
-	heapZombie->announce();
-	delete heapZombie;
+	std::cout << std::endl;
+	std::cout << "----------------------------------"<< std::endl;
+	std::cout << "Heap Zombies" <<std::endl;
+	std::cout << "----------------------------------"<< std::endl;
 
-	randomChump("BigZombie");
-	randomChump("SmallZombie");
-	randomChump("FatZombie");
-	randomChump("SkinnyZombie");
-	randomChump("HeadlessZombie");
-	randomChump("LeglessZombie");
-	randomChump("StackZombie");
+	const std::string names[] = {
+		"HeapZombie_1",
+		"HeapZombie_2",
+		"HeapZombie_3",
+		"HeapZombie_4",
+		"HeapZombie_5",
+		"HeapZombie_6",
+		"HeapZombie_7",
+		"HeapZombie_8",
+		"HeapZombie_9",
+		"HeapZombie_10"
+	};
+	Zombie* heapZombies[10];
+
+	for (int i = 0; i < 10; ++i)
+	{
+		heapZombies[i] = newZombie(names[i]);
+		heapZombies[i]->announce();
+	}
+	for (int i = 0; i < 10; ++i)
+		delete heapZombies[i];
+	
+	std::cout << std::endl;
+	std::cout << "----------------------------------"<< std::endl;
+	std::cout << "Stack Zombies" <<std::endl;
+	std::cout << "----------------------------------"<< std::endl;
+
+	randomChump("StackZombie_1");
+	randomChump("StackZombie_2");
+	randomChump("StackZombie_3");
+	randomChump("StackZombie_4");
+	randomChump("StackZombie_5");
+	randomChump("StackZombie_6");
+	randomChump("StackZombie_7");
+	randomChump("StackZombie_8");
+	randomChump("StackZombie_9");
+	randomChump("StackZombie_10");
+
 
 	return 0;
 }
