@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 16:07:12 by mbany             #+#    #+#             */
-/*   Updated: 2025/04/27 16:38:08 by mbany            ###   ########.fr       */
+/*   Updated: 2025/04/29 20:03:05 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,31 @@ print a message with the name of the zombie for debugging purposes.
 */
 #include "Zombie.hpp"
 
-Zombie* newZombie(std::string name);
-void randomChump(std::string name);
+Zombie* zombieHorde( int N, std::string name );
 
 int main(void)
 {
-	Zombie* heapZombie = newZombie("HeapZombie");
-	heapZombie->announce();
-	delete heapZombie;
+	const std::string names[] = {
+		"HeapZombie_1",
+		"HeapZombie_2",
+		"HeapZombie_3",
+		"HeapZombie_4",
+		"HeapZombie_5",
+		"HeapZombie_6",
+		"HeapZombie_7",
+		"HeapZombie_8",
+		"HeapZombie_9",
+		"HeapZombie_10"
+	};
+	Zombie* heapZombies[10];
 
-	randomChump("BigZombie");
-	randomChump("SmallZombie");
-	randomChump("FatZombie");
-	randomChump("SkinnyZombie");
-	randomChump("HeadlessZombie");
-	randomChump("LeglessZombie");
-	randomChump("StackZombie");
-
+	for (int i = 0; i < 10; ++i)
+	{
+		heapZombies[i] = zombieHorde(0, names[i]);
+		heapZombies[i]->announce();
+	}
+	for (int i = 0; i < 10; ++i)
+		delete heapZombies[i];
+		
 	return 0;
 }
