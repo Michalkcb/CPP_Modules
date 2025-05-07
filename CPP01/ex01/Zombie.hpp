@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
+/*   By: michalkcb <michalkcb@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 16:08:10 by mbany             #+#    #+#             */
-/*   Updated: 2025/04/29 19:57:27 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/08 00:02:15 by michalkcb        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ public:
 	
 	void setName(std::string name);
 	void announce(void) const;
+	Zombie* zombieHorde( int N, std::string name );
 };
 
 #endif
