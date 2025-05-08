@@ -6,7 +6,7 @@
 /*   By: michalkcb <michalkcb@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 16:08:10 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/08 00:02:15 by michalkcb        ###   ########.fr       */
+/*   Updated: 2025/05/08 23:28:51 by michalkcb        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 
 class Zombie
 {

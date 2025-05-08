@@ -6,7 +6,7 @@
 /*   By: michalkcb <michalkcb@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 16:08:07 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/07 23:51:55 by michalkcb        ###   ########.fr       */
+/*   Updated: 2025/05/08 23:29:44 by michalkcb        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,9 @@ Zombie* zombieHorde( int N, std::string name )
 	Zombie* horde = new Zombie[N];
 	for (int i = 0; i < N; i++)
 	{
-		horde[i].setName(name);
+		std:: ostringstream oss;
+		oss << name << (i + 1);
+		horde[i].setName(oss.str());
 	}
 	return horde;
 }

@@ -6,7 +6,7 @@
 /*   By: michalkcb <michalkcb@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 16:07:12 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/08 00:01:47 by michalkcb        ###   ########.fr       */
+/*   Updated: 2025/05/08 23:30:33 by michalkcb        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,17 @@ Don’t forget to delete all the zombies and check for memory leaks.
 */
 #include "Zombie.hpp"
 
-Zombie* zombieHorde( int N, std::string name );
+Zombie* zombieHorde(int N, std::string name);
 
 int main(void)
 {
 	int N = 10;
-	Zombie* horde = zombieHorde(N, "Stupid");
+	Zombie* horde = zombieHorde(N, "Stupid ");
 
 	for (int i = 0; i < N; i++)
 		horde[i].announce();
 
-	for (int i = 0; i < 10; ++i)
+	// for (int i = 0; i < 10; ++i)
 		delete[] horde;
 		
 	return 0;
