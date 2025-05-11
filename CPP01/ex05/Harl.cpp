@@ -6,15 +6,39 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 11:49:00 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/11 14:19:36 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/11 14:43:35 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
+const std::string Harl::levels[4] = {
+	"DEBUG", 
+	"INFO", 
+	"WARNING", 
+	"ERROR"
+};
+const Harl::HarlFunc Harl::funcs[4] = {
+	&Harl::debug,
+	&Harl::info,
+	&Harl::warning,
+	&Harl::error
+};
 
-Harl::Harl()
+Harl::Harl(){}
+
+void Harl::complain(std::string level)
 {
+	for (int i = 0; i < 4; i++)
+	{
+		if (levels[i] == level)
+		{
+			(this->*funcs[i])();
+			return;
+		}
+	}
+		std::cout << "[ UNKNOWN ]" << level << std::endl;
 }
+
 void Harl::debug(void)
 {
     std::cout << "[DEBUG] I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << std::endl;
@@ -35,16 +59,3 @@ void Harl::error(void)
     std::cout << "[ERROR] This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-void Harl::complain(std::string level)
-{
-	if (level == "DEBUG")
-		debug();
-	else if (level == "INFO")
-		info();
-	else if (level == "WARNING")
-		warning();
-	else if (level == "ERROR")
-		error();
-	else
-		std::cout << "[ UNKNOWN ]" << level << std::endl;
-}

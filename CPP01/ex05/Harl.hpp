@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 11:49:09 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/11 14:25:01 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/11 14:36:19 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ private:
 	void info( void );
 	void warning( void );
 	void error( void );
-	// typedef void (Harl::*HarlFunc)(void);
-	// HarlFunc getFunction(std::string level);
+	
+	typedef void (Harl::*HarlFunc)(void);
+	static const std::string levels[4];
+	static const HarlFunc funcs[4];
+	
 };	
 #endif
