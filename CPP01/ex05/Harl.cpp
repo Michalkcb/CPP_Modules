@@ -6,7 +6,13 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 11:49:00 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/11 11:49:01 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/11 12:03:25 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Harl.hpp"
+
+Harl::Harl()
+{
+	std::cout << "Harl object created from Harl." << std::endl;
+}

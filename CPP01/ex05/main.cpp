@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/11 11:29:38 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/11 12:03:17 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,12 @@ twice!
 Create and turn in tests to show that Harl complains a lot. You can use the examples
 of comments listed above in the subject or choose to use comments of your own.
 */
-#include <iostream>
-#include <fstream>
-#include <string>
+
+#include "Harl.hpp"
+
+int main()
+{
+	Harl harl;
+	std::cout << "Harl object created from main." << std::endl;
+	return 0;
+}

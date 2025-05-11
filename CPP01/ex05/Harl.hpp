@@ -6,19 +6,20 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 11:49:09 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/11 11:51:27 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/11 12:01:38 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HARL_HPP
 # define HARL_HPP
 #include <iostream>
+#include <fstream>
+#include <string>
 
 class Harl
 {
 public:
 	Harl();
-	~Harl();
 	void complain( std::string level );
 private:
 	void debug( void );
