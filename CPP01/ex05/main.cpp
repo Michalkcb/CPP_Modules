@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/11 14:14:41 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/11 14:49:21 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,11 @@ int main()
 	harl.complain("WARNING");
 	harl.complain("ERROR");
 	harl.complain("INVALID");
+	harl.complain("masło");
+	harl.complain("42");
+	harl.complain("Zdzisław");
+	harl.complain("zombie");
+	harl.complain("phonebook");
 	
 	
 	return 0;

@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 11:49:00 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/11 14:43:35 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/11 14:49:59 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void Harl::complain(std::string level)
 			return;
 		}
 	}
-		std::cout << "[ UNKNOWN ]" << level << std::endl;
+		std::cout << "[UNKNOWN] " << level << std::endl;
 }
 
 void Harl::debug(void)
