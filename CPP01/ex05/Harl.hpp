@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 11:49:09 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/11 13:39:16 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/11 14:25:01 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Harl
 {
 public:
 	Harl();
-	// void complain( std::string level );
-// private:
+	void complain( std::string level );
+private:
 	void debug( void );
 	void info( void );
 	void warning( void );
