@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 11:49:09 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/11 12:01:38 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/11 13:39:16 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ class Harl
 {
 public:
 	Harl();
-	void complain( std::string level );
-private:
+	// void complain( std::string level );
+// private:
 	void debug( void );
 	void info( void );
 	void warning( void );
 	void error( void );
-	typedef void (Harl::*HarlFunc)(void);
-	HarlFunc getFunction(std::string level);
+	// typedef void (Harl::*HarlFunc)(void);
+	// HarlFunc getFunction(std::string level);
 };	
 #endif

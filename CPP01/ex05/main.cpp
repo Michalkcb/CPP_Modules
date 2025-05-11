@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/11 12:03:17 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/11 13:34:21 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,11 @@ of comments listed above in the subject or choose to use comments of your own.
 int main()
 {
 	Harl harl;
-	std::cout << "Harl object created from main." << std::endl;
+
+	harl.debug();
+	harl.info();
+	harl.warning();
+	harl.error();
+	
 	return 0;
 }
