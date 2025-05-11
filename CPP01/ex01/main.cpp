@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: michalkcb <michalkcb@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 16:07:12 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/08 23:37:41 by michalkcb        ###   ########.fr       */
+/*   Updated: 2025/05/11 15:33:23 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int main(void)
 		horde[i].announce();
 
 	// for (int i = 0; i < 10; ++i)
-		delete[] horde;
+	delete[] horde;
 		
 	return 0;
 }
