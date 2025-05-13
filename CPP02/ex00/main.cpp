@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/13 19:03:48 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/13 21:21:26 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ $>
 #include <iostream>
 
 int main() {
-    Fixed a; // Tworzenie obiektu klasy Fixed
+    Fixed a;
+    Fixed b(a);
     return 0;
 }

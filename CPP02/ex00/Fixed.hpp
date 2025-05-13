@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 11:49:09 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/13 19:06:16 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/13 21:11:45 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Fixed
 {
 public:
 	Fixed();
+	Fixed(const Fixed &src);
 	~Fixed();
 private:
 	int _fixedPointValue;
