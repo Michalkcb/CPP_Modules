@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/13 22:37:28 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/13 23:07:17 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,11 @@ $>
 
 int main() {
     Fixed a;
-    // Fixed b(a);
-	// Fixed b;
-	// b = a;
+    Fixed b(a);
+	Fixed c;
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	a.setRawBits(42);
 	std::cout << a.getRawBits() << std::endl;
     return 0;
 }
