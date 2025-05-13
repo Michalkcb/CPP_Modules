@@ -6,12 +6,18 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 11:49:00 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/13 21:19:38 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/13 22:26:20 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
+
+int Fixed::getRawBits(void) const
+{
+	std::cout << "getRawBits member function called" << std::endl;
+	return this->_fixedPointValue;
+}
 
 Fixed::Fixed() : _fixedPointValue(0)
 {
@@ -22,6 +28,14 @@ Fixed::Fixed(const Fixed &src)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	this->_fixedPointValue = src._fixedPointValue;
+}
+
+Fixed &Fixed::operator=(const Fixed &crs)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &crs)
+		this->_fixedPointValue = crs._fixedPointValue;
+	return *this;
 }
 
 Fixed::~Fixed()
