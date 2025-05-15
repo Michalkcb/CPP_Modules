@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 11:49:09 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/15 19:47:15 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/15 19:52:36 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ public:
 	Fixed(float const floatValue);
 	Fixed(const Fixed &src);
 	Fixed &operator=(const Fixed &crs);
+	friend std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 	friend std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 	~Fixed();
 
