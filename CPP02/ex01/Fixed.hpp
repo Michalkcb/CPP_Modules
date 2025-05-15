@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 11:49:09 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/15 18:41:44 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/15 19:35:47 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ public:
 
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
+	int toInt(void) const;
 	
 private:
 	int _fixedPointValue;

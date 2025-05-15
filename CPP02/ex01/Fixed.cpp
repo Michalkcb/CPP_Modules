@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 11:49:00 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/15 18:43:55 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/15 19:37:02 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,9 @@ Fixed &Fixed::operator=(const Fixed &crs)
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
+}
+
+int Fixed::toInt(void) const
+{
+	return this->_fixedPointValue >> _fractionalBits;	
 }
