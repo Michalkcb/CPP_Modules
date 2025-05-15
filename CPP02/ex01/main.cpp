@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/15 19:23:15 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/15 19:27:56 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,4 +96,5 @@ a = Fixed( 20 );
 // std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 // std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 return 0;
+
 }
