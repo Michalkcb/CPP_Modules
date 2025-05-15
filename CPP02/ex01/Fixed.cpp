@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 11:49:00 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/15 19:45:13 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/15 19:47:51 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,11 @@ Fixed &Fixed::operator=(const Fixed &crs)
 int Fixed::toInt(void) const
 {
 	return this->_fixedPointValue >> _fractionalBits;	
+}
+
+float Fixed::toFloat(void) const
+{
+	return static_cast<float>(this->_fixedPointValue) / (1 << _fractionalBits);
 }
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
