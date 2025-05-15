@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/15 19:38:47 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/15 19:48:30 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,10 @@ Fixed const c( 42.42f );
 Fixed const d( b );
 a = Fixed( 1234.4321f );
 // a = Fixed( 20 );
-// std::cout << "a is " << a << std::endl;
-// std::cout << "b is " << b << std::endl;
-// std::cout << "c is " << c << std::endl;
-// std::cout << "d is " << d << std::endl;
+std::cout << "a is " << a << std::endl;
+std::cout << "b is " << b << std::endl;
+std::cout << "c is " << c << std::endl;
+std::cout << "d is " << d << std::endl;
 std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 std::cout << "c is " << c.toInt() << " as integer" << std::endl;
