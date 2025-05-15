@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 11:49:00 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/13 22:50:36 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/15 18:43:55 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,16 @@ void Fixed::setRawBits(int const raw)
 Fixed::Fixed() : _fixedPointValue(0)
 {
 	std::cout << "Default constructor called" << std::endl;
+}
+
+Fixed::Fixed(const int intValue)
+{
+	std::cout << "Int constructor called" << std::endl;
+	this->_fixedPointValue = intValue << _fractionalBits;
+}
+Fixed::Fixed(const float floatValue){
+	std::cout << "Float constructor called" << std::endl;
+	this->_fixedPointValue = roundf(floatValue * (1 << _fractionalBits));
 }
 
 Fixed::Fixed(const Fixed &src)
