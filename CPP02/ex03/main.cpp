@@ -6,59 +6,45 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/17 13:27:35 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/17 13:31:41 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-Exercise 02: Now we’re talking
-Exercise 02
-Now we’re talking
-Turn-in directory : ex02/
-Files to turn in : Makefile, main.cpp, Fixed.{h, hpp}, Fixed.cpp
+Exercise 03: BSP
+Exercise 03
+BSP
+Turn-in directory : ex03/
+Files to turn in : Makefile, main.cpp, Fixed.{h, hpp}, Fixed.cpp,
+Point.{h, hpp}, Point.cpp, bsp.cpp
 Allowed functions : roundf (from <cmath>)
-Add public member functions to your class to overload the following operators:
-• The 6 comparison operators: >, <, >=, <=, == and !=.
-• The 4 arithmetic operators: +, -, *, and /.
-• The 4 increment/decrement (pre-increment and post-increment, pre-decrement and
-post-decrement) operators, that will increase or decrease the fixed-point value from
-the smallest representable ϵ such as 1 + ϵ > 1.
-Add these four public overloaded member functions to your class:
-• A static member function min that takes as parameters two references on fixed-point
-numbers, and returns a reference to the smallest one.
-• A static member function min that takes as parameters two references to constant
-fixed-point numbers, and returns a reference to the smallest one.
-• A static member function max that takes as parameters two references on fixed-point
-numbers, and returns a reference to the greatest one.
-• A static member function max that takes as parameters two references to constant
-fixed-point numbers, and returns a reference to the greatest one.
-It’s up to you to test every feature of your class. However, running the code below:
+Now that you have a functional Fixed class, it would be nice to use it.
+Implement a function which indicates whether a point is inside of a triangle or not.
+Very useful, isn’t it?
+BSP stands for Binary space partitioning. You are welcome. :)
+You can pass this module without doing exercise 03
 
-
-#include <iostream>
-int main( void ) {
-Fixed a;
-Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-std::cout << a << std::endl;
-std::cout << ++a << std::endl;
-std::cout << a << std::endl;
-std::cout << a++ << std::endl;
-std::cout << a << std::endl;
-std::cout << b << std::endl;
-std::cout << Fixed::max( a, b ) << std::endl;
-return 0;
-}
-
-Should output something like (for greater readability, the constructor/destructor messages are removed in the example below):
-$> ./a.out
-0
-0.00390625
-0.00390625
-0.00390625
-0.0078125
-10.1016
-10.1016
-$>
+Let’s start by creating the class Point in Orthodox Canonical Form that represents
+a 2D point:
+• Private members:
+◦ A Fixed const attribute x.
+◦ A Fixed const attribute y.
+◦ Anything else useful.
+• Public members:
+◦ A default constructor that initializes x and y to 0.
+◦ A constructor that takes as parameters two constant floating-point numbers.
+It initializes x and y with those parameters.
+◦ A copy constructor.
+◦ A copy assignment operator overload.
+◦ A destructor.
+◦ Anything else useful.
+To conclude, implement the following function in the appropriate file:
+bool bsp( Point const a, Point const b, Point const c, Point const point);
+• a, b, c: The vertices of our beloved triangle.
+• point: The point to check.
+• Returns: True if the point is inside the triangle. False otherwise.
+Thus, if the point is a vertex or on edge, it will return False.
+Implement and turn in your own tests to ensure that your class behaves as expected.
 */
 
 #include "Fixed.hpp"
