@@ -6,7 +6,28 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 13:35:11 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/17 13:35:12 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/17 13:46:42 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef POINT_HPP
+#define POINT_HPP
+#include "Fixed.hpp"
+
+class Point
+{
+	private:
+		const Fixed x;
+		const Fixed y;
+	public:
+		Point();
+		Point(const float x, const float y);
+		Point(const Point &other);
+		Point &operator=(const Point &other);
+		~Point();
+		
+		Fixed getX() const;
+		Fixed getY() const;
+};
+
+#endif
