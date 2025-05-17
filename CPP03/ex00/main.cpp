@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/17 14:52:08 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/17 15:38:44 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,29 @@ The constructors and destructor must also display a message, so your peer-evalua
 can easily see they have been called.
 Implement and turn in your own tests to ensure your code works as expected.
 */
-
+#include "ClapTrap.hpp"
 
 #include <iostream>
 
-int main( void ) {
+int main() {
+	ClapTrap a("Titanic");
+	ClapTrap b("Iceberg");
 
-}
+	a.attack("Iceberg");
+	b.takeDamage(5);
+
+	b.attack("Titanic");
+	a.takeDamage(3);
+
+	a.beRepaired(2);
+	b.beRepaired(2);
+
+	for (int i = 0; i < 11; i++)
+		a.attack("Iceberg");
+	
+	a.beRepaired(2);
+
+	a.takeDamage(10);
+	b.attack("Titanic");
+	a.beRepaired(2);
+	}
