@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 11:49:00 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/15 20:00:09 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/17 11:21:13 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,26 @@ Fixed &Fixed::operator=(const Fixed &crs)
 	if (this != &crs)
 		this->_fixedPointValue = crs._fixedPointValue;
 	return *this;
+}
+
+Fixed Fixed::operator*(const Fixed &other) const
+{
+	Fixed result;
+	result.setRawBits(this->getRawBits() * other.getRawBits() >> _fractionalBits);
+	return result;
+}
+
+Fixed &Fixed::operator++()
+{
+	this -> _fixedPointValue++;
+	return *this;
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed temp = *this;
+	this -> _fixedPointValue++;
+	return temp;
 }
 
 int Fixed::toInt(void) const

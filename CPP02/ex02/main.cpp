@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/17 10:26:00 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/17 11:26:47 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,6 @@ std::cout << a << std::endl;
 std::cout << a++ << std::endl;
 std::cout << a << std::endl;
 std::cout << b << std::endl;
-std::cout << Fixed::max( a, b ) << std::endl;
+// std::cout << Fixed::max( a, b ) << std::endl;
 return 0;
 }
