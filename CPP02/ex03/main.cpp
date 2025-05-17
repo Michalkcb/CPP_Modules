@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/17 14:11:04 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/17 14:45:56 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,18 +53,20 @@ Implement and turn in your own tests to ensure that your class behaves as expect
 
 int main( void ) {
 Point a(0 , 0);
-Point b(2 , 0);
-Point c(0 , 2);
+Point b(10 , 0);
+Point c(0 , 10);
 
 Point inside(1 , 1);
-Point outside(3 , 3);
+Point outside(3 , 1);
+// Point outside(15 , 15);
 Point onEdge(0 , 1);
 Point onVertex(0 , 0);
 
-std::cout << "Point (1, 1) is inside triangle: " << bsp(a, b, c, inside) << std::endl;
-std::cout << "Point (3, 3) is outside triangle: " << bsp(a, b, c, outside) << std::endl;
-std::cout << "Point (0, 1) is on edge: " << bsp(a, b, c, onEdge) << std::endl;
-std::cout << "Point (0, 0) is on vertex: " << bsp(a, b, c, onVertex) << std::endl;
+std::cout << "Point (1, 1) is inside triangle: " << (bsp(a, b, c, inside) ? "yes" : "no") << std::endl;
+std::cout << "Point (3, 1) is outside triangle: " << (bsp(a, b, c, outside) ? "no" : "yes") << std::endl;
+// std::cout << "Point (15, 15) is outside triangle: " << (bsp(a, b, c, outside) ? "no" : "yes") << std::endl;
+std::cout << "Point (0, 1) is on edge: " << (bsp(a, b, c, onEdge) ? "yes" : "no") << std::endl;
+std::cout << "Point (0, 0) is on vertex: " << (bsp(a, b, c, onVertex) ? "yes" : "no") << std::endl;
 
 return 0;
 }
