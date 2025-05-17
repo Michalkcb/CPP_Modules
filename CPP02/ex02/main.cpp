@@ -6,74 +6,58 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/15 20:05:47 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/17 10:26:00 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-Exercise 01: Towards a more useful
-fixed-point number class
-Exercise 01
-Towards a more useful fixed-point number class
-Turn-in directory : ex01/
+Exercise 02: Now we’re talking
+Exercise 02
+Now we’re talking
+Turn-in directory : ex02/
 Files to turn in : Makefile, main.cpp, Fixed.{h, hpp}, Fixed.cpp
 Allowed functions : roundf (from <cmath>)
-The previous exercise was a good start but our class is pretty useless. It can only
-represent the value 0.0.
-Add the following public constructors and public member functions to your class:
-• A constructor that takes a constant integer as a parameter.
-It converts it to the corresponding fixed-point value. The fractional bits value is
-initialized to 8 like in exercise 00.
-• A constructor that takes a constant floating-point number as a parameter.
-It converts it to the corresponding fixed-point value. The fractional bits value is
-initialized to 8 like in exercise 00.
-• A member function float toFloat( void ) const;
-that converts the fixed-point value to a floating-point value.
-• A member function int toInt( void ) const;
-that converts the fixed-point value to an integer value.
-And add the following function to the Fixed class files:
-• An overload of the insertion («) operator that inserts a floating-point representation
-of the fixed-point number into the output stream object passed as parameter.
-Running this code:
+Add public member functions to your class to overload the following operators:
+• The 6 comparison operators: >, <, >=, <=, == and !=.
+• The 4 arithmetic operators: +, -, *, and /.
+• The 4 increment/decrement (pre-increment and post-increment, pre-decrement and
+post-decrement) operators, that will increase or decrease the fixed-point value from
+the smallest representable ϵ such as 1 + ϵ > 1.
+Add these four public overloaded member functions to your class:
+• A static member function min that takes as parameters two references on fixed-point
+numbers, and returns a reference to the smallest one.
+• A static member function min that takes as parameters two references to constant
+fixed-point numbers, and returns a reference to the smallest one.
+• A static member function max that takes as parameters two references on fixed-point
+numbers, and returns a reference to the greatest one.
+• A static member function max that takes as parameters two references to constant
+fixed-point numbers, and returns a reference to the greatest one.
+It’s up to you to test every feature of your class. However, running the code below:
+
+
 #include <iostream>
 int main( void ) {
 Fixed a;
-Fixed const b( 10 );
-Fixed const c( 42.42f );
-Fixed const d( b );
-a = Fixed( 1234.4321f );
-std::cout << "a is " << a << std::endl;
-std::cout << "b is " << b << std::endl;
-std::cout << "c is " << c << std::endl;
-std::cout << "d is " << d << std::endl;
-std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+std::cout << a << std::endl;
+std::cout << ++a << std::endl;
+std::cout << a << std::endl;
+std::cout << a++ << std::endl;
+std::cout << a << std::endl;
+std::cout << b << std::endl;
+std::cout << Fixed::max( a, b ) << std::endl;
 return 0;
 }
-Should output something similar to:
+
+Should output something like (for greater readability, the constructor/destructor messages are removed in the example below):
 $> ./a.out
-Default constructor called
-Int constructor called
-Float constructor called
-Copy constructor called
-Copy assignment operator called
-Float constructor called
-Copy assignment operator called
-Destructor called
-a is 1234.43
-b is 10
-c is 42.4219
-d is 10
-a is 1234 as integer
-b is 10 as integer
-c is 42 as integer
-d is 10 as integer
-Destructor called
-Destructor called
-Destructor called
-Destructor called
+0
+0.00390625
+0.00390625
+0.00390625
+0.0078125
+10.1016
+10.1016
 $>
 */
 
@@ -81,20 +65,14 @@ $>
 #include <iostream>
 
 int main( void ) {
-	Fixed a;
-	Fixed const b( 10 );
-	Fixed const c( 42.42f );
-	Fixed const d( b );
-	// Fixed d;
-	// d = b;
-	a = Fixed( 1234.4321f );
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-	return 0;
-	}
+Fixed a;
+Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+std::cout << a << std::endl;
+std::cout << ++a << std::endl;
+std::cout << a << std::endl;
+std::cout << a++ << std::endl;
+std::cout << a << std::endl;
+std::cout << b << std::endl;
+std::cout << Fixed::max( a, b ) << std::endl;
+return 0;
+}
