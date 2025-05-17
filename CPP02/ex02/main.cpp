@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/17 11:36:18 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/17 13:27:35 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,14 +65,41 @@ $>
 #include <iostream>
 
 int main( void ) {
-Fixed a;
-Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-std::cout << a << std::endl;
-std::cout << ++a << std::endl;
-std::cout << a << std::endl;
-std::cout << a++ << std::endl;
-std::cout << a << std::endl;
-std::cout << b << std::endl;
-std::cout << Fixed::max( a, b ) << std::endl;
+// Fixed a;
+// Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+Fixed a = 10;
+Fixed b = 5;
+std::cout << "a: " << a << std::endl;
+std::cout << "++a: " << ++a << std::endl;
+std::cout << "++a: " << ++a << std::endl;
+std::cout << "++a: " << ++a << std::endl;
+std::cout << "a: " << a << std::endl;
+std::cout << "++a: " << ++a << std::endl;
+std::cout << "++a: " << ++a << std::endl;
+std::cout << "a++: " << a++ << std::endl;
+std::cout << "a: " << a << std::endl;
+std::cout << "b: " << b << std::endl;
+std::cout << "max: " << Fixed::max( a, b ) << std::endl;
+
+std::cout << "min: " << Fixed::min( a, b ) << std::endl;
+std::cout << ">: " << ( a > b ? a : b ) << std::endl;
+std::cout << "<: " << ( a < b ? a : b) << std::endl;
+std::cout << ">=: " << ( a >= b ? a : b) << std::endl;
+std::cout << "<=: " << ( a <= b ? a : b) << std::endl;
+std::cout << "==: " << ( a == b) << std::endl;
+std::cout << "!=: " << ( a != b) << std::endl;
+std::cout << "/: " << ( a / b) << std::endl;
+std::cout << "+: " << ( a + b) << std::endl;
+std::cout << "-: " << ( a - b) << std::endl;
+std::cout << "--a: " << --a << std::endl;
+std::cout << "--a: " << --a << std::endl;
+std::cout << "--a: " << --a << std::endl;
+std::cout << "--a: " << --a << std::endl;
+std::cout << "b--: " << b-- << std::endl;
+std::cout << "b--: " << b-- << std::endl;
+std::cout << "b--: " << b-- << std::endl;
+std::cout << "b--: " << b-- << std::endl;
+
+
 return 0;
 }
