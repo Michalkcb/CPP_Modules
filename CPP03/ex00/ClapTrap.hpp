@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 14:53:06 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/17 15:02:31 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/17 15:12:19 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ private:
 	unsigned int energyPoints;
 	unsigned int attackDamage;
 public:
-	ClapTrap(/* args */);
+	ClapTrap(std::string name = "Default", unsigned int hitPoints = 10, unsigned int energyPoints = 10, unsigned int attackDamage = 0);
 	~ClapTrap();
 	
 	void attack(const std::string& target);	
@@ -31,12 +31,5 @@ public:
 	void beRepaired(unsigned int amount);
 };
 
-ClapTrap::ClapTrap(/* args */)
-{
-}
-
-ClapTrap::~ClapTrap()
-{
-}
 
 #endif
