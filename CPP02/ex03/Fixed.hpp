@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 11:49:09 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/17 13:17:07 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/17 14:03:10 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ public:
 	Fixed operator/(const Fixed &other) const;
 	Fixed operator+(const Fixed &other) const;
 	Fixed operator-(const Fixed &other) const;
+	Fixed operator-() const;
 	Fixed &operator++();
 	Fixed operator++(int);
 	Fixed &operator--();

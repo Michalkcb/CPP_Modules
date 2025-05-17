@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 11:49:00 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/17 13:17:37 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/17 14:18:44 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,11 @@ Fixed Fixed::operator-(const Fixed &other) const
 	Fixed result;
 	result.setRawBits(this->getRawBits() - other.getRawBits());
 	return result;
+}
+
+Fixed Fixed::operator-() const
+{
+    return Fixed(0) - *this;
 }
 
 Fixed &Fixed::operator++()
@@ -180,6 +185,6 @@ std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
