@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/17 16:25:43 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/20 19:06:10 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,24 +47,30 @@ Implement and turn in your own tests to ensure your code works as expected.
 #include <iostream>
 
 int main() {
-	ClapTrap a("Titanic");
-	ClapTrap b("Iceberg");
+	ClapTrap a("Titanic", 10, 10, 5);
+	ClapTrap b("Iceberg", 10, 10, 5);
 
-	a.attack("Iceberg");
-	b.takeDamage(5);
+	while (true) {
+		if (b.getHitPoints() == 0 || b.getEnergyPoints() == 0)
+			break;
+		b.attack("Titanic");
+		a.takeDamage(b.getAttackDamage());
 
-	b.attack("Titanic");
-	a.takeDamage(3);
-
-	a.beRepaired(2);
-	b.beRepaired(2);
-
-	for (int i = 0; i < 11; i++)
+		if(a.getHitPoints() == 0)
+			break;
+			
+		if (a.getEnergyPoints() == 0 || a.getHitPoints() == 0)
+			break;
 		a.attack("Iceberg");
-	
-	a.beRepaired(2);
+		b.takeDamage(a.getAttackDamage());
 
-	a.takeDamage(10);
-	b.attack("Titanic");
-	a.beRepaired(2);
+		if (b.getEnergyPoints() == 0)
+			break;
 	}
+	
+	std::cout << "\nEnd of fight " << std::endl;
+	std::cout << "Titanic HP: " << a.getHitPoints() << "; Titanic EP: " << a.getEnergyPoints() << std::endl;
+	std::cout << "Iceberg HP: " << b.getHitPoints() << "; Iceberg EP: " << b.getEnergyPoints() << "\n " <<std::endl;
+	return 0;
+	
+}
