@@ -6,7 +6,20 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 19:29:30 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/20 19:29:32 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/20 19:35:19 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+#include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
+{
+public:
+	ScavTrap(std::string name = "Default");
+	~ScavTrap();
+	void attack(const std::string& target);
+	void guardGate();
+};
+#endif
