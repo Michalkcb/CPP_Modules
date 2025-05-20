@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/20 19:09:46 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/20 20:24:35 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,17 @@ keeper mode.
 Don’t forget to add more tests to your program.
 */
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 #include <iostream>
 
 int main() {
 	ClapTrap a("Titanic", 10, 10, 5);
 	ClapTrap b("Iceberg", 10, 10, 5);
+	ScavTrap c("Guardian");
 
+	std::cout << "\nStart of fight " << std::endl;
+	
 	while (true) {
 		if (b.getHitPoints() == 0 || b.getEnergyPoints() == 0)
 			break;
@@ -61,6 +65,10 @@ int main() {
 		if (b.getEnergyPoints() == 0)
 			break;
 	}
+	
+	std::cout << "\n ScavTrap " <<  std::endl;
+	c.attack("Invader");
+	c.guardGate();
 	
 	std::cout << "\nEnd of fight " << std::endl;
 	std::cout << "Titanic HP: " << a.getHitPoints() << "; Titanic EP: " << a.getEnergyPoints() << std::endl;
