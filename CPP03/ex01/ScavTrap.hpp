@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 19:29:30 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/20 19:35:19 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/20 20:19:39 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class ScavTrap : public ClapTrap
 {
 public:
-	ScavTrap(std::string name = "Default");
+	ScavTrap(const std::string& name = "Default");
 	~ScavTrap();
 	void attack(const std::string& target);
 	void guardGate();
