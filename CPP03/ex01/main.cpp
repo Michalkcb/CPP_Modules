@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/22 18:14:42 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/22 18:20:24 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int main() {
 		if (c.getHitPoints() > 0 && c.getEnergyPoints() > 0) {
 			c.attack("Titanic");
 			a.takeDamage(c.getAttackDamage());
+			c.beRepaired(5);
 		}
 
 		std::cout << "---------------------------" << std::endl;
