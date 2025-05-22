@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/22 17:48:57 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/22 18:14:42 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,37 +42,45 @@ Don’t forget to add more tests to your program.
 #include <iostream>
 
 int main() {
-	ClapTrap a("Titanic", 10, 10, 5);
-	ClapTrap b("Iceberg", 10, 10, 5);
+	ClapTrap a("Titanic", 200, 10, 1);
+	ClapTrap b("Iceberg", 1000, 20, 5);
 	ScavTrap c("Guardian");
 
 	std::cout << "\nStart of fight " << std::endl;
 	
-	while (true) {
-		if (b.getHitPoints() == 0 || b.getEnergyPoints() == 0)
-			break;
-		b.attack("Titanic");
-		a.takeDamage(b.getAttackDamage());
+	while ((a.getHitPoints() > 0 && a.getEnergyPoints() > 0) ||(b.getHitPoints() > 0 && b.getEnergyPoints() > 0) || (c.getHitPoints() > 0 && c.getEnergyPoints() > 0)) {
+		if (a.getHitPoints() > 0 && a.getEnergyPoints() > 0) {
+			a.attack("Iceberg");
+			b.takeDamage(a.getAttackDamage());
+		}
 
-		if(a.getHitPoints() == 0)
-			break;
-			
-		if (a.getEnergyPoints() == 0 || a.getHitPoints() == 0)
-			break;
-		a.attack("Iceberg");
-		b.takeDamage(a.getAttackDamage());
+		if (b.getHitPoints() > 0 && b.getEnergyPoints() > 0) {
+			b.attack("Guardian");
+			c.takeDamage(b.getAttackDamage());
+		}
 
-		if (b.getEnergyPoints() == 0)
+		if (c.getHitPoints() > 0 && c.getEnergyPoints() > 0) {
+			c.attack("Titanic");
+			a.takeDamage(c.getAttackDamage());
+		}
+
+		std::cout << "---------------------------" << std::endl;
+
+		// Opcjonalnie: przerwij, jeśli jeden z nich zginie
+		if (
+			a.getHitPoints() == 0 ||
+			b.getHitPoints() == 0 ||
+			c.getHitPoints() == 0
+		)
 			break;
 	}
 	
 	std::cout << "\n ScavTrap " <<  std::endl;
-	c.attack("Invader");
 	c.guardGate();
 	
 	std::cout << "\nEnd of fight " << std::endl;
 	std::cout << "Titanic HP: " << a.getHitPoints() << "; Titanic EP: " << a.getEnergyPoints() << std::endl;
-	std::cout << "Iceberg HP: " << b.getHitPoints() << "; Iceberg EP: " << b.getEnergyPoints() << "\n " <<std::endl;
+	std::cout << "Iceberg HP: " << b.getHitPoints() << "; Iceberg EP: " << b.getEnergyPoints() << std::endl;
 	std::cout << "Terminator HP: " << c.getHitPoints() << "; Terminator EP: " << c.getEnergyPoints() << "\n " <<std::endl;
 	return 0;
 	
