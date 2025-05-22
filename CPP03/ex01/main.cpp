@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/20 20:24:35 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/22 17:48:57 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ int main() {
 	std::cout << "\nEnd of fight " << std::endl;
 	std::cout << "Titanic HP: " << a.getHitPoints() << "; Titanic EP: " << a.getEnergyPoints() << std::endl;
 	std::cout << "Iceberg HP: " << b.getHitPoints() << "; Iceberg EP: " << b.getEnergyPoints() << "\n " <<std::endl;
+	std::cout << "Terminator HP: " << c.getHitPoints() << "; Terminator EP: " << c.getEnergyPoints() << "\n " <<std::endl;
 	return 0;
 	
 }

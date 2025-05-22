@@ -6,11 +6,11 @@
 #    By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/26 17:05:48 by mbany             #+#    #+#              #
-#    Updated: 2025/05/20 20:16:07 by mbany            ###   ########.fr        #
+#    Updated: 2025/05/22 17:38:09 by mbany            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex03
+NAME = ex01
 SRC = main.cpp \
 	  ClapTrap.cpp \
 	  ScavTrap.cpp \
