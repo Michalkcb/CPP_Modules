@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 14:53:06 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/20 18:55:53 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/22 18:50:19 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
 	unsigned int getHitPoints() const { return hitPoints; }
 	unsigned int getEnergyPoints() const { return energyPoints; }
 	unsigned int getAttackDamage() const { return attackDamage; }
+	std::string getName() const { return name;}
 };
-
 
 #endif

@@ -6,38 +6,36 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/22 18:20:24 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/22 19:00:45 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-Exercise 01: Serena, my love!
-Exercise : 01
-Serena, my love!
-Turn-in directory : ex01/
-Files to turn in : Files from previous exercise + ScavTrap.{h, hpp},
-ScavTrap.cpp
+Exercise 02: Repetitive work
+Exercise : 02
+Repetitive work
+Turn-in directory : ex02/
+Files to turn in : Files from previous exercises + FragTrap.{h, hpp},
+FragTrap.cpp
 Forbidden functions : None
-Because you can never have enough ClapTraps, you will now create a derived robot.
-It will be named ScavTrap and will inherit the constructors and destructor from ClapTrap. However, its constructors, destructor and attack() will print different messages.
-After all, ClapTraps are aware of their individuality.
-Note that proper construction/destruction chaining must be shown in your tests.
-When a ScavTrap is created, the program starts by building a ClapTrap. Destruction is
-in reverse order. Why?
-ScavTrap will use the attributes of ClapTrap (update ClapTrap in consequence) and
-must initialize them to:
+Making ClapTraps is probably starting to get on your nerves.
+Now, implement a FragTrap class that inherits from ClapTrap. It is very similar to
+ScavTrap. However, its construction and destruction messages must be different. Proper
+construction/destruction chaining must be shown in your tests. When a FragTrap is
+created, the program starts by building a ClapTrap. Destruction is in reverse order.
+Same things for the attributes, but with different values this time:
 • Name, which is passed as parameter to a constructor
 • Hit points (100), represent the health of the ClapTrap
-• Energy points (50)
-• Attack damage (20)
-ScavTrap will also have its own special capacity:
-void guardGate();
-This member function will display a message informing that ScavTrap is now in Gate
-keeper mode.
-Don’t forget to add more tests to your program.
+• Energy points (100)
+• Attack damage (30)
+FragTrap has a special capacity too:
+void highFivesGuys(void);
+This member function displays a positive high fives request on the standard output.
+Again, add more tests to your program
 */
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 #include <iostream>
 
@@ -45,6 +43,7 @@ int main() {
 	ClapTrap a("Titanic", 200, 10, 1);
 	ClapTrap b("Iceberg", 1000, 20, 5);
 	ScavTrap c("Guardian");
+	FragTrap d("High5");
 
 	std::cout << "\nStart of fight " << std::endl;
 	
@@ -82,7 +81,7 @@ int main() {
 	std::cout << "\nEnd of fight " << std::endl;
 	std::cout << "Titanic HP: " << a.getHitPoints() << "; Titanic EP: " << a.getEnergyPoints() << std::endl;
 	std::cout << "Iceberg HP: " << b.getHitPoints() << "; Iceberg EP: " << b.getEnergyPoints() << std::endl;
-	std::cout << "Terminator HP: " << c.getHitPoints() << "; Terminator EP: " << c.getEnergyPoints() << "\n " <<std::endl;
+	std::cout << "Guardian HP: " << c.getHitPoints() << "; Guardian EP: " << c.getEnergyPoints() << "\n " <<std::endl;
 	return 0;
 	
 }

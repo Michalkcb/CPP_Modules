@@ -6,7 +6,7 @@
 #    By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/26 17:05:48 by mbany             #+#    #+#              #
-#    Updated: 2025/05/22 18:24:06 by mbany            ###   ########.fr        #
+#    Updated: 2025/05/22 18:37:11 by mbany            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = ex02
 SRC = main.cpp \
 	  ClapTrap.cpp \
 	  FragTrap.cpp \
+	  ScavTrap.cpp \
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
