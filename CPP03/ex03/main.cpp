@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/24 14:59:22 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/24 17:20:48 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,6 @@ int main() {
 	std::cout << "Iceberg HP: " << b.getHitPoints() << "; Iceberg EP: " << b.getEnergyPoints() << std::endl;
 	std::cout << "Guardian HP: " << c.getHitPoints() << "; Guardian EP: " << c.getEnergyPoints() <<std::endl;
 	std::cout << "High5 HP: " << d.getHitPoints() << "; High5 EP: " << d.getEnergyPoints() <<std::endl;
+	std::cout << "Diamond HP: " << e.getHitPoints() << "; Diamond EP: " << e.getEnergyPoints() <<std::endl;
 	return 0;
 }

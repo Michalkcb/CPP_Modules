@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 19:29:30 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/24 16:00:56 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/24 17:29:31 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,11 @@ public:
 	~DiamondTrap();
 	void whoAmI();
 	using ScavTrap::attack;
+	using ClapTrap::getEnergyPoints;
+	using ClapTrap::getHitPoints;
+	
 
 private:
-	std::string _name;
+	std::string name;
 };
 #endif
