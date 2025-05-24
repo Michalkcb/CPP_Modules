@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/24 11:52:37 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/24 14:59:22 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ Again, add more tests to your program.
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
+
 
 #include <iostream>
 
@@ -53,6 +55,7 @@ int main() {
 	ClapTrap b("Iceberg", 1000, 20, 5);
 	ScavTrap c("Guardian");
 	FragTrap d("High5");
+	DiamondTrap e("Diamomd");
 
 	std::cout << "\nStart of fight " << std::endl;
 	
