@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 14:53:06 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/24 16:46:36 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/24 17:38:16 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ protected:
 	unsigned int energyPoints;
 	unsigned int attackDamage;
 public:
-	ClapTrap(std::string name = "Default", unsigned int hitPoints = 10, unsigned int energyPoints = 10, unsigned int attackDamage = 0);
+	ClapTrap(std::string name = "Default", unsigned int hitPoints = 88, unsigned int energyPoints = 88, unsigned int attackDamage = 88);
 	~ClapTrap();
 	
 	void attack(const std::string& target);	

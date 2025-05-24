@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 13:42:16 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/24 17:29:38 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/24 18:51:21 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,11 @@ DiamondTrap::DiamondTrap()
 
 DiamondTrap::DiamondTrap(const std::string& name)
     : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name) {
-    std::cout << "DiamondTrap constructor called for " << name << std::endl;
     this->name = name;
+    this->hitPoints = FragTrap::hitPoints;  // Ustaw HP z FragTrap
+    this->energyPoints = ScavTrap::energyPoints;  // Ustaw EP z ScavTrap
+    this->attackDamage = FragTrap::attackDamage;  // Ustaw obrażenia z FragTrap
+    std::cout << "DiamondTrap " << name << " created!" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& other)
