@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 14:53:06 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/24 14:17:51 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/24 16:46:36 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 #include <iostream>
 #include <string>
 
-
 class ClapTrap
 {
-private:
+protected:
 	std::string name;
 	unsigned int hitPoints;
 	unsigned int energyPoints;
