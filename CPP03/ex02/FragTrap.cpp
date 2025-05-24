@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 19:29:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/22 18:50:47 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/24 11:48:11 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ void FragTrap::attack(const std::string& target)
 
 void FragTrap::highFivesGuys()
 {
-	std::cout << "FragTrap " <<  getName() << "requests high fives!" << std::endl;
+	std::cout << "FragTrap " <<  getName() << " requests high fives!" << std::endl;
 }

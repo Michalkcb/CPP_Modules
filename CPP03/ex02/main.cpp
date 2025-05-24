@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/22 19:00:45 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/24 11:49:32 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,22 @@ int main() {
 		if (a.getHitPoints() > 0 && a.getEnergyPoints() > 0) {
 			a.attack("Iceberg");
 			b.takeDamage(a.getAttackDamage());
+			d.highFivesGuys();
 		}
 
 		if (b.getHitPoints() > 0 && b.getEnergyPoints() > 0) {
 			b.attack("Guardian");
 			c.takeDamage(b.getAttackDamage());
+			d.highFivesGuys();
+
 		}
 
 		if (c.getHitPoints() > 0 && c.getEnergyPoints() > 0) {
 			c.attack("Titanic");
 			a.takeDamage(c.getAttackDamage());
 			c.beRepaired(5);
+			d.highFivesGuys();
+
 		}
 
 		std::cout << "---------------------------" << std::endl;
@@ -81,7 +86,7 @@ int main() {
 	std::cout << "\nEnd of fight " << std::endl;
 	std::cout << "Titanic HP: " << a.getHitPoints() << "; Titanic EP: " << a.getEnergyPoints() << std::endl;
 	std::cout << "Iceberg HP: " << b.getHitPoints() << "; Iceberg EP: " << b.getEnergyPoints() << std::endl;
-	std::cout << "Guardian HP: " << c.getHitPoints() << "; Guardian EP: " << c.getEnergyPoints() << "\n " <<std::endl;
+	std::cout << "Guardian HP: " << c.getHitPoints() << "; Guardian EP: " << c.getEnergyPoints() <<std::endl;
+	std::cout << "High5 HP: " << d.getHitPoints() << "; High5 EP: " << d.getEnergyPoints() <<std::endl;
 	return 0;
-	
 }
