@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 14:53:06 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/20 18:55:53 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/25 14:50:01 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef DOG_HPP
+#define DOG_HPP
+#include "Animal.hpp"
 #include <iostream>
 #include <string>
 
-class ClapTrap
+class Dog : public Animal
 {
-private:
-	std::string name;
-	unsigned int hitPoints;
-	unsigned int energyPoints;
-	unsigned int attackDamage;
 public:
-	ClapTrap(std::string name = "Default", unsigned int hitPoints = 10, unsigned int energyPoints = 10, unsigned int attackDamage = 0);
-	~ClapTrap();
-	
-	void attack(const std::string& target);	
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
-	unsigned int getHitPoints() const { return hitPoints; }
-	unsigned int getEnergyPoints() const { return energyPoints; }
-	unsigned int getAttackDamage() const { return attackDamage; }
+	Dog();
+	~Dog();
+	void makeSound() const;
 };
-
 
 #endif

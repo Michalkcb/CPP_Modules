@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/25 12:39:44 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/25 14:50:38 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,35 +51,21 @@ from a WrongAnimal class. If you replace the Animal and the Cat by the wrong one
 in the code above, the WrongCat should output the WrongAnimal sound.
 Implement and turn in more tests than the ones given above.
 */
-#include "ClapTrap.hpp"
-
+#include "Animal.hpp"
+#include "Dog.hpp"
 #include <iostream>
 
-int main() {
-	ClapTrap a("Titanic", 10, 10, 5);
-	ClapTrap b("Iceberg", 10, 10, 5);
+int main()
+{
+const Animal* meta = new Animal();
+const Animal* j = new Dog();
+// const Animal* i = new Cat();
+std::cout << j->getType() << " " << std::endl;
+// std::cout << i->getType() << " " << std::endl;
+// i->makeSound(); //will output the cat sound!
+j->makeSound();
+meta->makeSound();
+delete meta;
 
-	while (true) {
-		if (b.getHitPoints() == 0 || b.getEnergyPoints() == 0)
-			break;
-		b.attack("Titanic");
-		a.takeDamage(b.getAttackDamage());
-
-		if(a.getHitPoints() == 0)
-			break;
-			
-		if (a.getEnergyPoints() == 0 || a.getHitPoints() == 0)
-			break;
-		a.attack("Iceberg");
-		b.takeDamage(a.getAttackDamage());
-
-		if (b.getEnergyPoints() == 0)
-			break;
-	}
-	
-	std::cout << "\nEnd of fight " << std::endl;
-	std::cout << "Titanic HP: " << a.getHitPoints() << "; Titanic EP: " << a.getEnergyPoints() << std::endl;
-	std::cout << "Iceberg HP: " << b.getHitPoints() << "; Iceberg EP: " << b.getEnergyPoints() << "\n " <<std::endl;
-	return 0;
-	
+return 0;
 }
