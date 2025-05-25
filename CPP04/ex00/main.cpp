@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/25 14:50:38 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/25 15:00:40 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,22 @@ Implement and turn in more tests than the ones given above.
 */
 #include "Animal.hpp"
 #include "Dog.hpp"
+#include "Cat.hpp"
 #include <iostream>
 
 int main()
 {
 const Animal* meta = new Animal();
 const Animal* j = new Dog();
-// const Animal* i = new Cat();
+const Animal* i = new Cat();
 std::cout << j->getType() << " " << std::endl;
-// std::cout << i->getType() << " " << std::endl;
-// i->makeSound(); //will output the cat sound!
+std::cout << i->getType() << " " << std::endl;
+i->makeSound(); //will output the cat sound!
 j->makeSound();
 meta->makeSound();
 delete meta;
+delete j;
+delete i;
 
 return 0;
 }

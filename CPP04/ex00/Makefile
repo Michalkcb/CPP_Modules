@@ -6,13 +6,15 @@
 #    By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/26 17:05:48 by mbany             #+#    #+#              #
-#    Updated: 2025/05/25 14:08:11 by mbany            ###   ########.fr        #
+#    Updated: 2025/05/25 15:00:25 by mbany            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex00
 SRC = main.cpp \
 	  Animal.cpp \
+	  Dog.cpp \
+	  Cat.cpp \
 	  
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
