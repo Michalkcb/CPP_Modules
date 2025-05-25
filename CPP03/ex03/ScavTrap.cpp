@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 19:29:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/20 20:17:58 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/25 11:57:37 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 
 ScavTrap::ScavTrap(const std::string& name)
-	: ClapTrap(name, 100, 50, 20)
+	: ClapTrap(name)
 {
+	this->hitPoints = 100;
+    this->attackDamage = 30;
 	std::cout << "ScavTrap constructor called for " << name << std::endl;
 }
 
