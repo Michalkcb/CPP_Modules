@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/29 18:21:37 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/29 19:18:00 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ const Animal* j = new Dog();
 const Animal* i = new Cat();
 std::cout << j->getType() << " " << std::endl;
 std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
+i->makeSound();
 j->makeSound();
 meta->makeSound();
 delete meta;
