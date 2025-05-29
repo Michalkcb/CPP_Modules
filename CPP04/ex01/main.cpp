@@ -6,13 +6,11 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/29 20:15:46 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/29 20:27:59 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-Exercise 01: I don’t want to set the
-world on fire
 Exercise : 01
 I don’t want to set the world on fire
 Turn-in directory : ex01/
@@ -66,8 +64,8 @@ std::cout << "\nTesting WrongAnimal and WrongCat:\n";
 const WrongAnimal* wrongMeta = new WrongAnimal();
 const WrongAnimal* wrongCat = new WrongCat();
 std::cout << wrongCat->getType() << " " << std::endl;
-wrongCat->makeSound(); // Should output WrongCat sound
-wrongMeta->makeSound(); // Should output WrongAnimal sound
+wrongCat->makeSound();
+wrongMeta->makeSound();
 delete wrongMeta;
 delete wrongCat;
 
