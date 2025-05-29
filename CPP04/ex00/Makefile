@@ -6,7 +6,7 @@
 #    By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/26 17:05:48 by mbany             #+#    #+#              #
-#    Updated: 2025/05/25 15:00:25 by mbany            ###   ########.fr        #
+#    Updated: 2025/05/29 19:59:55 by mbany            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,9 @@ SRC = main.cpp \
 	  Animal.cpp \
 	  Dog.cpp \
 	  Cat.cpp \
+	  WrongAnimal.cpp \
+	  WrongCat.cpp \
+	  
 	  
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
