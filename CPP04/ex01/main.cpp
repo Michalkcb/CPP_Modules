@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/29 20:27:59 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/29 20:44:35 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,25 +49,27 @@ Implement and turn in more tests than the ones given above.
 
 int main()
 {
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound();
-j->makeSound();
-meta->makeSound();
-delete meta;
-delete j;
-delete i;
-std::cout << "\nTesting WrongAnimal and WrongCat:\n";
-const WrongAnimal* wrongMeta = new WrongAnimal();
-const WrongAnimal* wrongCat = new WrongCat();
-std::cout << wrongCat->getType() << " " << std::endl;
-wrongCat->makeSound();
-wrongMeta->makeSound();
-delete wrongMeta;
-delete wrongCat;
+    const Animal* animals[100];
+
+    for (int i = 0; i < 50; i++) {
+        std::cout << "Creating Dog " << i + 1 << std::endl;
+        animals[i] = new Dog();
+    }
+
+    for (int i = 50; i < 100; i++) {
+        std::cout << "Creating Cat " << i - 49 << std::endl;
+        animals[i] = new Cat();
+    }
+
+    for (int i = 0; i < 100; i++) {
+        std::cout << "Animal " << i + 1 << " type: " << animals[i]->getType() << std::endl;
+        animals[i]->makeSound();
+    }
+
+    for (int i = 0; i < 100; i++) {
+        std::cout << "Deleting Animal " << i + 1 << std::endl;
+        delete animals[i];
+    }
 
 return 0;
 }
