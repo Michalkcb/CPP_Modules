@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/29 19:18:00 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/29 20:10:27 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ Implement and turn in more tests than the ones given above.
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 #include <iostream>
 
 int main()
@@ -71,6 +73,14 @@ meta->makeSound();
 delete meta;
 delete j;
 delete i;
+std::cout << "\nTesting WrongAnimal and WrongCat:\n";
+const WrongAnimal* wrongMeta = new WrongAnimal();
+const WrongAnimal* wrongCat = new WrongCat();
+std::cout << wrongCat->getType() << " " << std::endl;
+wrongCat->makeSound(); // Should output WrongCat sound
+wrongMeta->makeSound(); // Should output WrongAnimal sound
+delete wrongMeta;
+delete wrongCat;
 
 return 0;
 }
