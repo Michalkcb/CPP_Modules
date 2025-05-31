@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 14:52:41 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/29 20:37:02 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/31 18:49:30 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,8 @@ Dog &Dog::operator=(const Dog &other) {
 
 void Dog::makeSound() const {
 	std::cout << "Woof Woof!" << std::endl; // Dog sound
+}
+
+Brain *Dog::getBrain() const {
+	return brain; // Return the pointer to the brain
 }
