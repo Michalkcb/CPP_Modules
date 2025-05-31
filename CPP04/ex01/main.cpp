@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/29 20:44:35 by mbany            ###   ########.fr       */
+/*   Updated: 2025/05/31 18:40:06 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,15 @@ int main()
         std::cout << "Creating Cat " << i - 49 << std::endl;
         animals[i] = new Cat();
     }
+
+    std::cout << "Testing deep copy for Dog:" << std::endl;
+    Dog originalDog;
+    Dog copiedDog = originalDog;
+
+    originalDog.makeSound();
+    copiedDog.makeSound();
+
+    
 
     for (int i = 0; i < 100; i++) {
         std::cout << "Animal " << i + 1 << " type: " << animals[i]->getType() << std::endl;
