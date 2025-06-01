@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/11 15:10:20 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/01 16:12:20 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int main(int ac, char **av)
 	if (ac != 2)
 	{
 		std::cerr << "Usage: ./harlFilter <level>" << std::endl;
+		std::cerr << " DEBUG | INFO | WARNING | ERROR " << std::endl;
 		return 1;
 	}
 	Harl harl;
