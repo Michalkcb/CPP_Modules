@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 14:52:41 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/25 14:29:23 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/01 13:00:59 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,18 @@ Animal::~Animal() {
 // method to make sound
 void Animal::makeSound() const {
 	std::cout << "Animal sound!" << std::endl;
+}
+
+Animal::Animal(const Animal &other) : type(other.type) {
+	std::cout << "Animal copy constructor called!" << std::endl;
+}
+
+Animal &Animal::operator=(const Animal &other) {
+	std::cout << "Animal assignment operator called!" << std::endl;
+	if (this != &other) {
+		type = other.type; // Copy the type
+	}
+	return *this;
 }
 
 // Getter for type

@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/31 18:50:01 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/01 13:13:45 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,11 @@ int main()
 
     // Dodaj pomysły do Brain w Dog i Cat
     dog.getBrain()->setIdea(0, "Chase the ball");
-    // cat.getBrain()->setIdea(0, "Climb the tree");
+    cat.getBrain()->setIdea(0, "Climb the tree");
 
     // Sprawdź, czy pomysły są poprawnie zapisane
     std::cout << "Dog idea: " << dog.getBrain()->getIdea(0) << std::endl;
-    // std::cout << "Cat idea: " << cat.getBrain()->getIdea(0) << std::endl;
+    std::cout << "Cat idea: " << cat.getBrain()->getIdea(0) << std::endl;
 
     for (int i = 0; i < 100; i++) {
         std::cout << "Animal " << i + 1 << " type: " << animals[i]->getType() << std::endl;
