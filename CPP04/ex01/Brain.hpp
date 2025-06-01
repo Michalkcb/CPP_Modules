@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 14:53:06 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/25 15:54:14 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/01 12:12:38 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ class Brain
 		~Brain();
 		Brain(const Brain &other);
 		Brain &operator=(const Brain &other);
+
+		void setIdea(int index, const std::string &idea);
+		std::string getIdea(int index) const;
 };
 
 #endif

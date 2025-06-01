@@ -6,14 +6,14 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 14:52:41 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/31 18:49:30 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/01 12:21:31 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 Dog::Dog() : brain(new Brain()) {
-	// type = "Dog"; // Set the type to "Dog"
+	type = "Dog"; // Set the type to "Dog"
 	std::cout << "Dog constructor called!" << std::endl;
 }
 
@@ -43,4 +43,7 @@ void Dog::makeSound() const {
 
 Brain *Dog::getBrain() const {
 	return brain; // Return the pointer to the brain
+}
+std::string Dog::getType() const {
+	return type; // Return the type of the animal
 }

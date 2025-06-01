@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 14:52:41 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/29 20:30:04 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/01 12:13:27 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,21 @@ Brain &Brain::operator=(const Brain &other) {
 		}
 	}
 	return *this;
+}
+
+void Brain::setIdea(int index, const std::string &idea) {
+	if (index >= 0 && index < 100) {
+		this->ideas[index] = idea;
+	} else {
+		std::cerr << "Index out of bounds!" << std::endl;
+	}
+}
+
+std::string Brain::getIdea(int index) const {
+	if (index >= 0 && index < 100) {
+		return ideas[index];
+	} else {
+		std::cerr << "Index out of bounds!" << std::endl;
+		return "";
+	}
 }
