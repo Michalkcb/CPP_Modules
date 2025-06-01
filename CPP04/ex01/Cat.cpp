@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 14:52:41 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/01 13:28:34 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/01 13:34:53 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Cat::Cat() : brain(new Brain()) {
 	std::cout << "Cat constructor called!" << std::endl;
 }
 Cat::~Cat() {
+	delete brain; // Delete the brain to avoid memory leak
 	std::cout << "Cat destructor called!" << std::endl;
 }
 void Cat::makeSound() const {
