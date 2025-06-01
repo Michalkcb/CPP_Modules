@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 14:53:06 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/01 13:15:02 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/01 13:51:36 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <iostream>
 #include <string>
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
 public:
 	Cat();

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,26 +14,25 @@
 #include <iostream>
 
 // Default constructor
-Animal::Animal() : type("Animal") {
-	std::cout << "Animal constructor called!" << std::endl;
+AAnimal::AAnimal() : type("AAnimal") {
+	std::cout << "AAnimal constructor called!" << std::endl;
 }
-
 // destructor
-Animal::~Animal() {
-	std::cout << "Animal destructor called!" << std::endl;
+AAnimal::~AAnimal() {
+	std::cout << "AAnimal destructor called!" << std::endl;
 }
 
 // method to make sound
-void Animal::makeSound() const {
-	std::cout << "Animal sound!" << std::endl;
+void AAnimal::makeSound() const {
+	std::cout << "AAnimal sound!" << std::endl;
 }
 
-Animal::Animal(const Animal &other) : type(other.type) {
-	std::cout << "Animal copy constructor called!" << std::endl;
+AAnimal::AAnimal(const AAnimal &other) : type(other.type) {
+	std::cout << "AAnimal copy constructor called!" << std::endl;
 }
 
-Animal &Animal::operator=(const Animal &other) {
-	std::cout << "Animal assignment operator called!" << std::endl;
+AAnimal &AAnimal::operator=(const AAnimal &other) {
+	std::cout << "AAnimal assignment operator called!" << std::endl;
 	if (this != &other) {
 		type = other.type; // Copy the type
 	}
@@ -41,7 +40,7 @@ Animal &Animal::operator=(const Animal &other) {
 }
 
 // Getter for type
-std::string Animal::getType() const {
+std::string AAnimal::getType() const {
 	return type;
 }
 
