@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/17 14:53:06 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/01 12:20:06 by mbany            ###   ########.fr       */
+/*   Created: 2025/05/29 19:59:30 by mbany             #+#    #+#             */
+/*   Updated: 2025/05/29 20:01:57 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
-#include "Animal.hpp"
-#include "Brain.hpp"
-#include <iostream>
-#include <string>
+#include "WrongCat.hpp"
 
-class Dog : public Animal
-{
-public:
-	Dog();
-	~Dog();
-	Dog(const Dog &other);
-	Dog &operator=(const Dog &other);
-
-	virtual std::string getType() const;
-	void makeSound() const;
-	Brain *getBrain() const;
-	
-private:
-	Brain *brain;
-
-};
-
-#endif
+WrongCat::WrongCat() {
+    type = "WrongCat";
+    std::cout << "WrongCat constructor called" << std::endl;
+}
+WrongCat::~WrongCat() {
+    std::cout << "WrongCat destructor called" << std::endl;
+}
+void WrongCat::makeSound() const {
+    std::cout << "WrongCat meows!" << std::endl;
+}

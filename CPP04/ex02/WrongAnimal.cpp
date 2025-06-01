@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/17 14:53:06 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/01 12:20:06 by mbany            ###   ########.fr       */
+/*   Created: 2025/05/29 19:20:11 by mbany             #+#    #+#             */
+/*   Updated: 2025/05/29 19:21:35 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
-#include "Animal.hpp"
-#include "Brain.hpp"
-#include <iostream>
-#include <string>
+#include "WrongAnimal.hpp"
 
-class Dog : public Animal
-{
-public:
-	Dog();
-	~Dog();
-	Dog(const Dog &other);
-	Dog &operator=(const Dog &other);
-
-	virtual std::string getType() const;
-	void makeSound() const;
-	Brain *getBrain() const;
-	
-private:
-	Brain *brain;
-
-};
-
-#endif
+WrongAnimal::WrongAnimal() : type("WrongAnimal") {
+    std::cout << "WrongAnimal constructor called" << std::endl;
+}
+WrongAnimal::~WrongAnimal() {
+    std::cout << "WrongAnimal destructor called" << std::endl;
+}
+std::string WrongAnimal::getType() const {
+    return type;
+}
+void WrongAnimal::makeSound() const {
+    std::cout << "WrongAnimal sound!" << std::endl;
+}
