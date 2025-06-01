@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 15:09:50 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/01 17:02:53 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/01 17:23:09 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class AMateria
 {
 protected:
-
+	std::string type;
 public:
 AMateria(std::string const & type);
 
