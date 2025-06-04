@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/05/10 18:41:10 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/04 10:12:11 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,21 @@ own tests to ensure your program works as expected.
 #include <fstream>
 #include <string>
 
-std::string replaceString(std::string& line, const std::string &s1, const std::string &s2)
+std::string replaceString(const std::string& line, const std::string& s1, const std::string& s2)
 {
-	std::string result = line;
-	size_t pos = 0;
+    // if (s1.empty()) // Obsługa przypadku, gdy s1 jest pusty
+    //     return line;
 
-	while ((pos = line.find(s1, pos)) != std::string::npos)
-	{
-		result.erase(pos, s1.length());
-		result.insert(pos, s2);
-		pos += s2.length();
-	}
-	return result;
+    std::string result = line;
+    size_t pos = 0;
+
+    while ((pos = result.find(s1, pos)) != std::string::npos)
+    {
+        result.erase(pos, s1.length());
+        result.insert(pos, s2);
+        pos += s2.length();
+    }
+    return result;
 }
 
 int main(int ac, char **av)
