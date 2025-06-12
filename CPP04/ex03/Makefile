@@ -6,7 +6,7 @@
 #    By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/26 17:05:48 by mbany             #+#    #+#              #
-#    Updated: 2025/06/12 18:31:07 by mbany            ###   ########.fr        #
+#    Updated: 2025/06/12 19:48:12 by mbany            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ SRC = main.cpp \
 	Character.cpp \
 	Cure.cpp \
 	Ice.cpp \
+	MateriaSource.cpp \
 
 # Object files
 OBJ = $(SRC:.cpp=.o)

@@ -6,14 +6,15 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 17:02:00 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/07 20:41:29 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/12 19:44:48 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 #define ICHARACTER_HPP
 #include <string>
-#include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

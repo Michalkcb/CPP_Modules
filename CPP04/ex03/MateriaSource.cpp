@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 19:21:17 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/12 19:25:56 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/12 19:48:39 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 MateriaSource::MateriaSource() {
 	for (int i = 0; i < 4; ++i) {
-		templates[i] = nullptr;
+		templates[i] = 0;
 	}
 }
 
@@ -30,7 +30,7 @@ MateriaSource::MateriaSource(const MateriaSource& other) {
 		if (other.templates[i]) {
 			templates[i] = other.templates[i]->clone();
 		} else {
-			templates[i] = nullptr;
+			templates[i] = 0;
 		}
 	}
 }
@@ -42,7 +42,7 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
 			if (other.templates[i]) {
 				templates[i] = other.templates[i]->clone();
 			} else {
-				templates[i] = nullptr;
+				templates[i] = 0;
 			}
 		}
 	}
@@ -65,5 +65,5 @@ AMateria* MateriaSource::createMateria(std::string const & type) {
 			return templates[i]->clone();
 		}
 	}
-	return nullptr;
+	return 0;
 }

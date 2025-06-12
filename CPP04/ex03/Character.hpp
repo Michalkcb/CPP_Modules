@@ -6,13 +6,14 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 18:12:58 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/12 18:34:07 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/12 19:27:43 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 #include "ICharacter.hpp"
+#include "AMateria.hpp"
 
 class Character : public ICharacter {
 private:

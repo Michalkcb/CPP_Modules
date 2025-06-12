@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 18:15:54 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/12 18:20:47 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/12 19:47:20 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 Character::Character(std::string const & name) : name(name) {
 	for (int i = 0; i < 4; ++i)
-		inventory[i] = nullptr;
+		inventory[i] = 0;
 }
 
 Character:: ~Character() {
@@ -27,7 +27,7 @@ Character::Character(const Character & other) : name(other.name) {
 		if (other.inventory[i])
 			inventory[i] = other.inventory[i]->clone();
 		else
-			inventory[i] = nullptr;
+			inventory[i] = 0;
 	}
 }
 
@@ -39,7 +39,7 @@ Character & Character::operator=(const Character & other) {
 			if (other.inventory[i])
 				inventory[i] = other.inventory[i]->clone();
 			else
-				inventory[i] = nullptr;
+				inventory[i] = 0;
 		}
 	}
 	return *this;
@@ -63,7 +63,7 @@ void Character::equip(AMateria* m) {
 void Character::unequip(int idx) {
 	if (idx < 0 || idx > 3)
 		return; // Invalid index
-	inventory[idx] = nullptr;
+	inventory[idx] = 0;
 };
 
 void Character::use(int idx, ICharacter& target) {
