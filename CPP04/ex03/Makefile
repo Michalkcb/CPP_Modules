@@ -6,7 +6,7 @@
 #    By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/26 17:05:48 by mbany             #+#    #+#              #
-#    Updated: 2025/06/12 19:48:12 by mbany            ###   ########.fr        #
+#    Updated: 2025/06/12 20:14:34 by mbany            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,17 +16,21 @@ SRC = main.cpp \
 	Character.cpp \
 	Cure.cpp \
 	Ice.cpp \
-	MateriaSource.cpp \
+	MateriaSource.cpp
 
 # Object files
-OBJ = $(SRC:.cpp=.o)
+OBJDIR = obj
+OBJ = $(addprefix $(OBJDIR)/, $(SRC:.cpp=.o))
   
 # Compiler and flags
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Default rule
-all: $(NAME)
+all: $(OBJDIR) $(NAME)
+
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
 
 # Link object files into executable
 $(NAME): $(OBJ)
@@ -39,12 +43,12 @@ $(NAME): $(OBJ)
 	@echo "\033[33m2025\033[0m"
 
 # Compile source files into object files
-%.o: %.cpp
+$(OBJDIR)/%.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Clean object files
 clean:
-	rm -f $(OBJ) $(OBJ:.o=.d)
+	rm -rf $(OBJDIR)
 
 # Clean everything
 fclean: clean
@@ -52,9 +56,6 @@ fclean: clean
 
 # Rebuild
 re: fclean all
-
-# Include dependencies
--include $(OBJ:.o=.d)
 
 # Phony targets
 .PHONY: all clean fclean re
