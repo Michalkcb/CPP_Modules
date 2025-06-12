@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 21:23:43 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/07 22:27:33 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/12 18:09:10 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,6 @@ Ice & Ice::operator=(Ice const & other) {
         this->type = other.type;
     }
     return *this;
-}
-
-AMateria* Ice::clone() const {
-    return new Ice(*this);
 }
 
 AMateria* Ice::clone() const {
