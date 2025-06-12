@@ -6,13 +6,17 @@
 #    By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/26 17:05:48 by mbany             #+#    #+#              #
-#    Updated: 2025/06/03 19:31:45 by mbany            ###   ########.fr        #
+#    Updated: 2025/06/12 18:31:07 by mbany            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex04
 SRC = main.cpp \
-	
+	AMateria.cpp \
+	Character.cpp \
+	Cure.cpp \
+	Ice.cpp \
+
 # Object files
 OBJ = $(SRC:.cpp=.o)
   
