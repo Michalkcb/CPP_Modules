@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/12 18:24:49 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/12 18:26:53 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,7 @@ As usual, implement and turn in more tests than the ones given above.
 #include "ICharacter.hpp"
 #include "Character.hpp"
 #include "Cure.hpp"
+#include "IMateriaSource.hpp"
 
 
 int main()
