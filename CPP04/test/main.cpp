@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/14 14:33:08 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/14 16:27:34 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,9 +137,22 @@ MateriaSource& MateriaSource::operator=(MateriaSource const & other){
 };
 
 void MateriaSource :: learnMateria(AMateria* m){
+	if (!m) return;
+	for (int i = 0; i <4; i++){
+		if (!templates[i]) {
+		templates[i] = m;
+		return;
+		}
+	}
 	
 }
-
+AMateria* MateriaSource::createMateria(std::string const & type){
+	for (int i = 0; i < 4; i++) {
+		if (templates[i] && templates[i]->getType() == type)
+			return templates[i]->clone();
+	}
+	return 0;
+};
 
 MateriaSource::~MateriaSource(){
 		for (int i = 0; i < 4; i++) {
