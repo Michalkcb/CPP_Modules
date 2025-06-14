@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 12:03:52 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/14 13:46:32 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/14 14:13:02 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ virtual void unequip(int idx) = 0;
 virtual void use(int idx, ICharacter& target) = 0;
 };
 
-class MateriaSource
+class MateriaSource : public IMateriaSource
 {
 	private:
-		AMateria* trmplates[4];
+		AMateria* templates[4];
 	public:
 		MateriaSource();
 		MateriaSource(MateriaSource const & other);

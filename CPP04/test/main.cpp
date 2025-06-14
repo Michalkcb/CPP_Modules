@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/14 12:57:36 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/14 14:33:08 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,31 @@ As usual, implement and turn in more tests than the ones given above.
 
 #include <iostream>
 #include "AMateria.hpp"
+
+MateriaSource::MateriaSource(){
+	for (int i = 0; i < 4; i++) {
+		templates[i] = 0;
+	}
+};
+
+MateriaSource :: MateriaSource(MateriaSource const & other){
+	
+};
+
+MateriaSource& MateriaSource::operator=(MateriaSource const & other){
+	
+};
+
+void MateriaSource :: learnMateria(AMateria* m){
+	
+}
+
+
+MateriaSource::~MateriaSource(){
+		for (int i = 0; i < 4; i++) {
+		templates[i] = 0;
+	}
+};
 
 int main()
 {
