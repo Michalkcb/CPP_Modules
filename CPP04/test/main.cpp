@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/14 16:27:34 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/14 16:31:12 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,6 +156,7 @@ AMateria* MateriaSource::createMateria(std::string const & type){
 
 MateriaSource::~MateriaSource(){
 		for (int i = 0; i < 4; i++) {
+		delete templates[i];
 		templates[i] = 0;
 	}
 };
