@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 12:03:52 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/14 13:03:55 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/14 13:46:32 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,16 @@ virtual void use(int idx, ICharacter& target) = 0;
 
 class MateriaSource
 {
+	private:
+		AMateria* trmplates[4];
+	public:
+		MateriaSource();
+		MateriaSource(MateriaSource const & other);
+		MateriaSource & operator=(MateriaSource const & other);
+		virtual ~MateriaSource();
+
+		virtual void learnMateria(AMateria* m);	
+		virtual AMateria* createMateria(std::string const & type);
 
 };
 
