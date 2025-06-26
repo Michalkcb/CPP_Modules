@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/01 13:13:45 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/26 20:24:59 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,5 @@ int main()
         std::cout << "Deleting Animal " << i + 1 << std::endl;
         delete animals[i];
     }
-
 return 0;
 }
