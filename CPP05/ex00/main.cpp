@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/30 17:57:36 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/30 19:13:10 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,24 @@ As usual, turn in some tests to prove everything works as expected.
 
 int main()
 {
-	Bureaucrat::GradeTooHighException;
+	try {
+		Bureaucrat b1("Alice", 1);
+		std::cout << b1 << std::endl;
+		b1.incrementGrade();
+		std::cout << b1 << std::endl;
+	} catch (const Bureaucrat::GradeTooHighException &e) {
+		std::cerr << "Exception: " << e.what() << std::endl;
+	}
+
+	try {
+		Bureaucrat b2("Bob", 150);
+		std::cout << b2 << std::endl;
+		b2.decrementGrade();
+		std::cout << b2 << std::endl;
+	} catch (const Bureaucrat::GradeTooLowException &e) {
+		std::cerr << "Exception: " << e.what() << std::endl;
+	}
+
+	return 0;
 	
 }

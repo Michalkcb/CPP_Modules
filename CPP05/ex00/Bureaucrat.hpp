@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:42:43 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/30 18:10:01 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/30 19:29:14 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ public:
 	class GradeTooHighException : public std::exception
 	{
 		public:
-			const char* what() const throw() { return "Grade too high!"; }
+			const char* what() const throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
 		public:
-			const char* what() const throw() { return "Grade too low!"; }
+			const char* what() const throw();
 	};
 		
 };
