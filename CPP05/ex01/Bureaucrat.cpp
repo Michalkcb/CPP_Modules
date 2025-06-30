@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:42:25 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/30 19:29:18 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/30 20:35:53 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other) {
 	}
 	return *this;
 }
+
+
 Bureaucrat::~Bureaucrat() {}
+
 
 int Bureaucrat::incrementGrade() {
 	if (grade <= 1)
@@ -58,6 +61,17 @@ std::string Bureaucrat::getName() const {
 int Bureaucrat::getGrade() const {
 	return grade;
 }
+
+void Bureaucrat::signForm(Form &form) {
+    try {
+        form.beSigned(*this);
+        std::cout << name << " signed " << form.getName() << std::endl;
+    } catch (const std::exception &e) {
+        std::cout << name << " couldn’t sign " << form.getName()
+                  << " because " << e.what() << std::endl;
+    }
+}
+
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
 	os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
 	return os;

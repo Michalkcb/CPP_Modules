@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:42:43 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/30 19:29:14 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/30 20:35:23 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include "Form.hpp"
 
 class Bureaucrat 
 {
@@ -30,6 +31,7 @@ public:
 
 	int incrementGrade();	
 	int decrementGrade();
+	void signForm(Form &form);
 
 	std::string getName() const;
 	int getGrade() const;

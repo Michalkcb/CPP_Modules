@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/30 19:47:10 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/30 20:33:39 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,15 @@ Implement and turn in some tests to ensure everything works as expected.
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+
 
 int main()
 {
+	Bureaucrat b1("Alice", 1);
+	Bureaucrat b2("Bob", 150);
+		
 	try {
-		Bureaucrat b1("Alice", 1);
 		std::cout << b1 << std::endl;
 		b1.incrementGrade();
 		std::cout << b1 << std::endl;
@@ -61,11 +65,19 @@ int main()
 	}
 
 	try {
-		Bureaucrat b2("Bob", 150);
 		std::cout << b2 << std::endl;
 		b2.decrementGrade();
 		std::cout << b2 << std::endl;
 	} catch (const Bureaucrat::GradeTooLowException &e) {
+		std::cerr << "Exception: " << e.what() << std::endl;
+	}
+
+	try {
+		Form f1("TopSecret", 1, 10);
+		std::cout << f1 << std::endl;
+		b1.signForm(f1);
+		std::cout << f1 << std::endl;
+	} catch (const std::exception &e) {
 		std::cerr << "Exception: " << e.what() << std::endl;
 	}
 
