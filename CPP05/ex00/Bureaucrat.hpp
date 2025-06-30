@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:42:43 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/30 18:02:01 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/30 18:10:01 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,21 +34,17 @@ public:
 	std::string getName() const;
 	int getGrade() const;
 	
-	class GradeTooHighException
+	class GradeTooHighException : public std::exception
 	{
-	public:
-		virtual const char* what() const throw() {
-			return "Grade too high!";
-		}
+		public:
+			const char* what() const throw() { return "Grade too high!"; }
 	};
-	class GradeTooLowException
+	class GradeTooLowException : public std::exception
 	{
-	public:
-		virtual const char* what() const throw() {
-			return "Grade too low!";
-		}
+		public:
+			const char* what() const throw() { return "Grade too low!"; }
 	};
-	
+		
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);
