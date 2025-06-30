@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/30 17:12:40 by mbany            ###   ########.fr       */
+/*   Updated: 2025/06/30 17:57:36 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,11 @@ As usual, turn in some tests to prove everything works as expected.
 
 */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 #include <iostream>
+#include "Bureaucrat.hpp"
 
 int main()
 {
-
+	Bureaucrat::GradeTooHighException;
+	
 }
