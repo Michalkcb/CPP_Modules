@@ -6,52 +6,40 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/01 20:02:06 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/01 20:05:44 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-Exercise 02: No, you need form 28B,
-not 28C...
-Exercise : 02
-No, you need form 28B, not 28C...
-Turn-in directory : ex02/
-Files to turn in : Makefile, main.cpp, Bureaucrat.[{h, hpp},cpp],
-Bureaucrat.cpp +
-AForm.[{h, hpp},cpp], ShrubberyCreationForm.[{h, hpp},cpp], +
-RobotomyRequestForm.[{h, hpp},cpp], PresidentialPardonForm.[{h, hpp},cpp]
+Exercise 03: At least this beats
+coffee-making
+Exercise : 03
+At least this beats coffee-making
+Turn-in directory : ex03/
+Files to turn in : Files from previous exercises + Intern.{h, hpp}, Intern.cpp
 Forbidden functions : None
-Since you now have basic forms, it’s time to make a few more that actually do something.
-In all cases, the base class Form must be an abstract class, and therefore should be
-renamed AForm. Keep in mind the form’s attributes need to remain private and that
-they are in the base class.
-Add the following concrete classes:
-
-• ShrubberyCreationForm: Required grades: sign 145, exec 137
-Create a file <target>_shrubbery in the working directory, and writes ASCII trees
-inside it.
-
-• RobotomyRequestForm: Required grades: sign 72, exec 45
-Makes some drilling noises. Then, informs that <target> has been robotomized
-successfully 50% of the time. Otherwise, informs that the robotomy failed.
-
-• PresidentialPardonForm: Required grades: sign 25, exec 5
-Informs that <target> has been pardoned by Zaphod Beeblebrox.
-All of them take only one parameter in their constructor: the target of the form. For
-example, "home" if you want to plant shrubbery at home.
-10
+Because filling out forms is annoying enough, it would be cruel to ask our bureaucrats
+to do this all day long. Fortunately, interns exist. In this exercise, you have to implement
+the Intern class. The intern has no name, no grade, no unique characteristics. The only
+thing the bureaucrats care about is that they do their job.
+However, the intern has one important capacity: the makeForm() function. It takes
+two strings. The first one is the name of a form and the second one is the target of the
+form. It return a pointer to a Form object (whose name is the one passed as parameter)
+whose target will be initialized to the second parameter.
+It will print something like:
+Intern creates <form>
+If the form name passed as parameter doesn’t exist, print an explicit error message.
+12
 C++ - Module 05 Repetition and Exceptions
-Now, add the execute(Bureaucrat const & executor) const member function to
-the base form and implement a function to execute the form’s action of the concrete
-classes. You have to check that the form is signed and that the grade of the bureaucrat
-attempting to execute the form is high enough. Otherwise, throw an appropriate exception.
-Whether you want to check the requirements in every concrete class or in the base
-class (then call another function to execute the form) is up to you. However, one way is
-prettier than the other one.
-Lastly, add the executeForm(AForm const & form) member function to the Bureaucrat. It must attempt to execute the form. If it’s successful, print something like:
-<bureaucrat> executed <form>
-If not, print an explicit error message.
-Implement and turn in some tests to ensure everything works as expected.
+You must avoid unreadable and ugly solutions like using a if/elseif/else forest. This
+kind of things won’t be accepted during the evaluation process. You’re not in Piscine
+(pool) anymore. As usual, you have to test that everything works as expected.
+For example, the code below creates a RobotomyRequestForm targeted on "Bender":
+{
+Intern someRandomIntern;
+Form* rrf;
+rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+}
 */
 
 #include <iostream>
