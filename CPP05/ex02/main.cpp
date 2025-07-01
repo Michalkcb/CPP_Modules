@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/01 13:52:38 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/01 15:09:34 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,15 @@ In all cases, the base class Form must be an abstract class, and therefore shoul
 renamed AForm. Keep in mind the form’s attributes need to remain private and that
 they are in the base class.
 Add the following concrete classes:
+
 • ShrubberyCreationForm: Required grades: sign 145, exec 137
 Create a file <target>_shrubbery in the working directory, and writes ASCII trees
 inside it.
+
 • RobotomyRequestForm: Required grades: sign 72, exec 45
 Makes some drilling noises. Then, informs that <target> has been robotomized
 successfully 50% of the time. Otherwise, informs that the robotomy failed.
+
 • PresidentialPardonForm: Required grades: sign 25, exec 5
 Informs that <target> has been pardoned by Zaphod Beeblebrox.
 All of them take only one parameter in their constructor: the target of the form. For

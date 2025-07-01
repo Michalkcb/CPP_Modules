@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 20:14:04 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/01 14:02:12 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/01 16:09:20 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ public:
 	};
 
 	class GradeTooLowException : public std::exception {
+	public:
+		const char* what() const throw();
+	};
+	
+	class FormNotSignedException : public std::exception {
 	public:
 		const char* what() const throw();
 	};

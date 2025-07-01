@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:42:43 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/01 13:45:50 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/01 15:57:53 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 
 	int incrementGrade();	
 	int decrementGrade();
-	void signForm(Form &form);
+	void signForm(AForm &form);
 
 	std::string getName() const;
 	int getGrade() const;
