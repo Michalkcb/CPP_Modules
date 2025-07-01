@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 14:43:29 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/01 15:23:21 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/01 16:32:32 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,9 @@ const std::string &ShrubberyCreationForm::getTarget() const {
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
     if (!getIsSigned())
-        throw AForm::FormNotSignedException();
+		throw AForm::FormNotSignedException();
     if (executor.getGrade() > getExecGrade())
-        throw AForm::GradeTooLowException();
-	
+		throw AForm::GradeTooLowException();
 	std::ofstream file((target + "_shrubbery").c_str());
 	if (file) {
     file << "      ccee88oo\n";

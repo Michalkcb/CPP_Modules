@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/01 15:09:34 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/01 16:26:32 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,33 @@ Implement and turn in some tests to ensure everything works as expected.
 #include <iostream>
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 
 int main()
 {
 	
+	ShrubberyCreationForm shrubberyForm("Home");
 	Bureaucrat b1("Alice", 1);
 	Bureaucrat b2("Bob", 150);
+	
+	try {
+		b1.signForm(shrubberyForm);
+	} catch (const std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
+	
+	try {
+		b1.executeForm(shrubberyForm);
+	} catch (const std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
+
+	try {
+		b2.executeForm(shrubberyForm);
+	} catch (const std::exception &e) {
+		std::cerr <<e.what() << std::endl;
+	}
 		
 	try {
 		std::cout << b1 << std::endl;

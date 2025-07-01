@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:42:25 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/01 15:58:08 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/01 16:25:00 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,14 @@ void Bureaucrat::signForm(AForm &form) {
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
 	os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
 	return os;
+}
+
+void Bureaucrat::executeForm(const AForm &form) const {
+	try {
+		form.execute(*this);
+		std::cout << name << " executed " << form.getName() << std::endl;
+	} catch (const std::exception &e) {
+		std::cout << name << " couldn’t execute " << form.getName()
+				  << " because " << e.what() << std::endl;
+	}
 }
