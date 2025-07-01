@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/01 16:26:32 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/01 19:19:52 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,29 +58,36 @@ Implement and turn in some tests to ensure everything works as expected.
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include <ctime>
 
 
 int main()
 {
+	srand(time(0)); // Initialize random seed
 	
 	ShrubberyCreationForm shrubberyForm("Home");
+	RobotomyRequestForm robotomyForm("Robot");
 	Bureaucrat b1("Alice", 1);
 	Bureaucrat b2("Bob", 150);
 	
 	try {
 		b1.signForm(shrubberyForm);
+		b1.signForm(robotomyForm);
 	} catch (const std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
 	
 	try {
 		b1.executeForm(shrubberyForm);
+		b1.executeForm(robotomyForm);
 	} catch (const std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
 
 	try {
 		b2.executeForm(shrubberyForm);
+		b2.executeForm(robotomyForm);
 	} catch (const std::exception &e) {
 		std::cerr <<e.what() << std::endl;
 	}
@@ -99,6 +106,17 @@ int main()
 		std::cout << b2 << std::endl;
 	} catch (const Bureaucrat::GradeTooLowException &e) {
 		std::cerr << "Exception: " << e.what() << std::endl;
+	}
+	try {
+		b2.signForm(shrubberyForm);
+	} catch (const std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
+	ShrubberyCreationForm unsignedForm("Garden");
+	try {
+		b1.executeForm(unsignedForm);
+	} catch (const std::exception &e) {
+		std::cerr << e.what() << std::endl;
 	}
 
 	// try {
