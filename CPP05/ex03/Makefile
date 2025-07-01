@@ -6,11 +6,11 @@
 #    By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/26 17:05:48 by mbany             #+#    #+#              #
-#    Updated: 2025/07/01 19:57:27 by mbany            ###   ########.fr        #
+#    Updated: 2025/07/01 20:06:14 by mbany            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex02
+NAME = ex03
 SRC = main.cpp \
 	Bureaucrat.cpp \
 	AForm.cpp \
