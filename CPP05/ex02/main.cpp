@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/01 19:19:52 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/01 19:58:52 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ Implement and turn in some tests to ensure everything works as expected.
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include <ctime>
 
 
@@ -68,12 +69,14 @@ int main()
 	
 	ShrubberyCreationForm shrubberyForm("Home");
 	RobotomyRequestForm robotomyForm("Robot");
+	PresidentialPardonForm pardonForm("Alice");
 	Bureaucrat b1("Alice", 1);
 	Bureaucrat b2("Bob", 150);
 	
 	try {
 		b1.signForm(shrubberyForm);
 		b1.signForm(robotomyForm);
+		b1.signForm(pardonForm);
 	} catch (const std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
@@ -81,6 +84,7 @@ int main()
 	try {
 		b1.executeForm(shrubberyForm);
 		b1.executeForm(robotomyForm);
+		b1.executeForm(pardonForm);
 	} catch (const std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
@@ -88,6 +92,7 @@ int main()
 	try {
 		b2.executeForm(shrubberyForm);
 		b2.executeForm(robotomyForm);
+		b2.executeForm(pardonForm);
 	} catch (const std::exception &e) {
 		std::cerr <<e.what() << std::endl;
 	}
