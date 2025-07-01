@@ -6,17 +6,14 @@
 #    By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/26 17:05:48 by mbany             #+#    #+#              #
-#    Updated: 2025/06/12 20:14:34 by mbany            ###   ########.fr        #
+#    Updated: 2025/07/01 13:28:01 by mbany            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex04
+NAME = ex02
 SRC = main.cpp \
-	AMateria.cpp \
-	Character.cpp \
-	Cure.cpp \
-	Ice.cpp \
-	MateriaSource.cpp
+	Bureaucrat.cpp \
+	Form.cpp \
 
 # Object files
 OBJDIR = obj
