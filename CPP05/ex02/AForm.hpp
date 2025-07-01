@@ -6,12 +6,12 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 20:14:04 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/01 13:39:02 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/01 13:45:13 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 #include <iostream>
 #include <string>
 

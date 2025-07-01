@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 17:42:43 by mbany             #+#    #+#             */
-/*   Updated: 2025/06/30 20:35:23 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/01 13:45:50 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 #include <string>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class Bureaucrat 
 {

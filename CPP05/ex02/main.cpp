@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/01 13:42:16 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/01 13:52:38 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,20 +78,20 @@ int main()
 		std::cerr << "Exception: " << e.what() << std::endl;
 	}
 
-	try {
-		Form f1("TopSecret", 1, 10);
-		std::cout << f1 << std::endl;
-		b1.signForm(f1);
-		std::cout << f1 << std::endl;
-	} catch (const std::exception &e) {
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
-	try {
-		Form f2("Secret", 1, 10);
-		b2.signForm(f2); // Bob ma za niski stopień
-	} catch (const std::exception &e) {
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
+	// try {
+	// 	AForm f1("TopSecret", 1, 10);
+	// 	std::cout << f1 << std::endl;
+	// 	b1.signForm(f1);
+	// 	std::cout << f1 << std::endl;
+	// } catch (const std::exception &e) {
+	// 	std::cerr << "Exception: " << e.what() << std::endl;
+	// }
+	// try {
+	// 	Form f2("Secret", 1, 10);
+	// 	b2.signForm(f2); // Bob ma za niski stopień
+	// } catch (const std::exception &e) {
+	// 	std::cerr << "Exception: " << e.what() << std::endl;
+	// }
 
 	return 0;
 }

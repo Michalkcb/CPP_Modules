@@ -6,14 +6,14 @@
 #    By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/26 17:05:48 by mbany             #+#    #+#              #
-#    Updated: 2025/07/01 13:28:01 by mbany            ###   ########.fr        #
+#    Updated: 2025/07/01 13:44:59 by mbany            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex02
 SRC = main.cpp \
 	Bureaucrat.cpp \
-	Form.cpp \
+	AForm.cpp \
 
 # Object files
 OBJDIR = obj
