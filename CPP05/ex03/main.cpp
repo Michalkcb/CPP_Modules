@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/06 12:00:21 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/06 13:11:50 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,12 @@ int main()
 	} catch (const std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
+	
+	std::cout << std::endl;
+	std::cout << "------------" << std::endl;
+	std::cout << "INTERN TESTS" << std::endl;
+	std::cout << "vvvvvvvvvvvv" << std::endl;
+	std::cout << std::endl;
 
 	Intern someRandomIntern;
 	AForm* form1 = someRandomIntern.makeForm("robotomy request", "Bender");
