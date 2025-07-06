@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/01 20:05:44 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/06 11:32:14 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ whose target will be initialized to the second parameter.
 It will print something like:
 Intern creates <form>
 If the form name passed as parameter doesn’t exist, print an explicit error message.
-12
 C++ - Module 05 Repetition and Exceptions
 You must avoid unreadable and ugly solutions like using a if/elseif/else forest. This
 kind of things won’t be accepted during the evaluation process. You’re not in Piscine
