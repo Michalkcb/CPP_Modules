@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 20:14:04 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/01 16:09:20 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/06 12:02:38 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	AForm(const std::string &name, int signGrade, int execGrade);
 	AForm(const AForm &other);
 	AForm &operator=(const AForm &other);
-	~AForm();
+	virtual ~AForm();
 
 	const std::string &getName() const;
 	bool getIsSigned() const;

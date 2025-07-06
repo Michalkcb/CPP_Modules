@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 11:25:29 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/06 11:55:32 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/06 12:24:16 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+
+Intern::Intern() {}
+Intern::Intern(const Intern&) {}
+Intern& Intern::operator=(const Intern&) {return *this;}
+Intern::~Intern() {}
 
 typedef AForm* (*FormCreator)(const std::string&);
 
@@ -40,5 +45,5 @@ AForm* Intern::makeForm(const std::string& formName, const std::string& target) 
         }
     }
     std::cerr << "Intern: form name not found!" << std::endl;
-    return nullptr;
+    return 0;
 }

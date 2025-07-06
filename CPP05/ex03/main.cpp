@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 00:01:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/06 11:32:14 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/06 12:00:21 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 #include <ctime>
 
 
@@ -110,5 +111,17 @@ int main()
 	} catch (const std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
+
+	Intern someRandomIntern;
+	AForm* form1 = someRandomIntern.makeForm("robotomy request", "Bender");
+	AForm* form2 = someRandomIntern.makeForm("shrubbery creation", "Home");
+	AForm* form3 = someRandomIntern.makeForm("presidential pardon", "Alice");
+	AForm* form4 = someRandomIntern.makeForm("nonexistent form", "Nobody");
+
+	delete form1;
+	delete form2;
+	delete form3;
+	delete form4;
+
 	return 0;
 }
