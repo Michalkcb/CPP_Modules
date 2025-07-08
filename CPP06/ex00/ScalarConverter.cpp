@@ -6,11 +6,16 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:55:51 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/08 19:29:47 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/08 19:38:30 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+#include <iostream>
+#include <limits>
+#include <cstdlib>
+#include <string>
+#include <cmath>
 #include <cctype>
 
 ScalarConverter :: ScalarConverter() {};
@@ -34,5 +39,11 @@ void ScalarConverter::convert(const std::string &literal) {
 
 bool ScalarConverter::isChar(const std::string &literal) {
 	return literal.length() == 1 && isprint(literal[0]) && !isdigit(literal[0]);
+}
+
+bool ScalarConverter::isInt(const std::string &literal) {
+	char* end;
+	long value = strtol(literal.c_str(), &end, 10);
+	return *end == '\0' && value >= std::numeric_limits<int>::min() && value <= std::numeric_limits<int>::max();
 }
 
