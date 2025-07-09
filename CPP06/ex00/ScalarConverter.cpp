@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:55:51 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/09 19:29:02 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/09 19:48:13 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,3 +96,34 @@ void ScalarConverter::convertInt(const std::string &literal) {
 	std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(i) << "\n";
 }
 
+void ScalarConverter::convertFloat(const std::string &literal) {
+	float f = std::strtof(literal.c_str(), NULL);
+	if (std::isnan(f) || std::isinf(f) || f < 0 || f > 127)
+		std::cout << "char: impossible\n";
+	else if (f >= 32 && f <= 126)
+		std::cout << "char: '" << static_cast<char>(f) << "'\n";
+	else
+		std::cout << "char: Non displayable\n";
+	if (f > std::numeric_limits<int>::max() || f < std::numeric_limits<int>::min() || std::isnan(f))
+		std::cout << "int: impossible\n";
+	else
+		std::cout << "int: " << static_cast<int>(f) << "\n";
+	std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f\n";
+	std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(f) << "\n";
+}
+
+void ScalarConverter::convertDouble(const std::string &literal) {
+	double d = std::strtod(literal.c_str(), NULL);
+	if (std::isnan(d) || std::isinf(d) || d < 0 || d > 127)
+		std::cout << "char: impossible\n";
+	else if (d >= 32 && d <= 126)
+		std::cout << "char: '" << static_cast<char>(d) << "'\n";
+	else
+		std::cout << "char: Non displayable\n";
+	if (d > std::numeric_limits<int>::max() || d < std::numeric_limits<int>::min() || std::isnan(d))
+		std::cout << "int: impossible\n";
+	else
+		std::cout << "int: " << static_cast<int>(d) << "\n";
+	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(d) << "f\n";
+	std::cout << "double: " << std::fixed << std::setprecision(1) << d << "\n";
+}
