@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:55:51 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/09 19:12:22 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/09 19:29:02 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,3 +71,28 @@ void ScalarConverter::convertChar(const std::string &literal) {
 	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(c) << "f" << std::endl;
 	std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(c) << std::endl;
 }
+
+void ScalarConverter::convertInt(const std::string &literal) {
+	char* end;
+	long  l = std::strtol(literal.c_str(), &end, 10);
+	int i = static_cast<int>(l);
+
+	if (*end != '\0' || l < std::numeric_limits<int>::min() || l > std::numeric_limits<int>::max()) {
+		std::cout << "char: impossible\n";
+		std::cout << "int: impossible\n";
+		std::cout << "float: impossible\n";
+		std::cout << "double: impossible\n";
+		return;
+	}
+	
+	if (i >= 32 && i <= 126)
+		std::cout << "char: '" << static_cast<char>(i) << "'\n";
+	else if (i >= 0 && i < 32)
+		std::cout << "char: Non displayable\n";
+	else
+		std::cout << "char: impossible\n";
+	std::cout << "int: " << i << "\n";
+	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(i) << "f\n";
+	std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(i) << "\n";
+}
+
