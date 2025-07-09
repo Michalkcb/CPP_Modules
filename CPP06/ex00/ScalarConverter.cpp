@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:55:51 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/08 19:38:30 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/09 17:13:53 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void ScalarConverter::convert(const std::string &literal) {
 		std::cerr << "Invalid literal: " << literal << std::endl;
 	}
 }
+
 
 bool ScalarConverter::isChar(const std::string &literal) {
 	return literal.length() == 1 && isprint(literal[0]) && !isdigit(literal[0]);
