@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:55:51 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/09 17:13:53 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/09 18:22:01 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void ScalarConverter::convert(const std::string &literal) {
 	}
 }
 
-
 bool ScalarConverter::isChar(const std::string &literal) {
 	return literal.length() == 1 && isprint(literal[0]) && !isdigit(literal[0]);
 }
@@ -48,3 +47,10 @@ bool ScalarConverter::isInt(const std::string &literal) {
 	return *end == '\0' && value >= std::numeric_limits<int>::min() && value <= std::numeric_limits<int>::max();
 }
 
+bool ScalarConverter::isFloat(const std::string &literal) {
+	if (literal == "nanf" || literal == "+inff" || literal == "-inff")
+		return true;
+	char* end;
+	std::strtof(literal.c_str(), &end);
+	return *(end -1) == 'f' && *end == '\0';	
+}
