@@ -6,12 +6,13 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:55:51 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/09 18:22:01 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/09 19:12:22 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 #include <iostream>
+#include <iomanip>
 #include <limits>
 #include <cstdlib>
 #include <string>
@@ -53,4 +54,20 @@ bool ScalarConverter::isFloat(const std::string &literal) {
 	char* end;
 	std::strtof(literal.c_str(), &end);
 	return *(end -1) == 'f' && *end == '\0';	
+}
+
+bool ScalarConverter::isDouble(const std::string &literal) {
+	if (literal == "nan" || literal == "+inf" || literal == "-inf")
+		return true;
+	char* end;
+	std::strtod(literal.c_str(), &end);
+	return *end == '\0';	
+}
+
+void ScalarConverter::convertChar(const std::string &literal) {
+	char c = literal[0];
+	std::cout << "char: '" << c << "'" << std::endl;
+	std::cout << "int: " << static_cast<int>(c) << std::endl;
+	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(c) << "f" << std::endl;
+	std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(c) << std::endl;
 }
