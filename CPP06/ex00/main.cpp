@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 15:57:12 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/06 15:57:56 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/09 19:53:05 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,3 +60,14 @@ int: 42
 float: 42.0f
 double: 42.0
 */
+
+#include "ScalarConverter.hpp"
+
+int main(int argc, char **argv) {
+    if (argc != 2) {
+        std::cerr << "Usage: ./convert <literal>" << std::endl;
+        return 1;
+    }
+    ScalarConverter::convert(argv[1]);
+    return 0;
+}
