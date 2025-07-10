@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/10 17:55:10 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/10 19:01:29 by mbany            ###   ########.fr       */
+/*   Created: 2025/07/10 18:57:53 by mbany             #+#    #+#             */
+/*   Updated: 2025/07/10 18:58:46 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <cstdint>
-#include "Data.hpp"
-class Serializer
-{
+#include <string>
+
+class Data {
 public:
-	static uintptr_t serialize(Data* ptr);
-	static Data* deserialize(uintptr_t raw);
-private:
-	Serializer();
-	Serializer(const Serializer& other);
-	Serializer &operator=(const Serializer &other);
-	~Serializer();
+	Data(const std::string &name, int value);
+	Data(const Data &other);
+	Data &operator=(const Data &other);
+	~Data();
+
+	const std::string &getName() const;
+	int getValue() const;
 };
