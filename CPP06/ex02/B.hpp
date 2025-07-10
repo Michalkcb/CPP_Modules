@@ -6,13 +6,10 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 20:09:40 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/10 20:09:47 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/10 20:13:06 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "Base.hpp"
-class B : public Base {
-	public:
-		virtual ~B() {}
-};
+class B : public Base {};

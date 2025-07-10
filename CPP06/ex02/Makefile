@@ -6,13 +6,13 @@
 #    By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/26 17:05:48 by mbany             #+#    #+#              #
-#    Updated: 2025/07/06 15:22:59 by mbany            ###   ########.fr        #
+#    Updated: 2025/07/10 20:12:02 by mbany            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME = ex02
 SRC = main.cpp \
-	Bureaucrat.cpp \
+	Base.cpp
 	
 
 # Object files
