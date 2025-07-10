@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 16:02:04 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/06 16:02:44 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/10 19:24:41 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,26 @@ deserialize(). Then, ensure the return value of deserialize() compares equal to 
 original pointer.
 Do not forget to turn in the files of your Data structure.
 */
+
+#include "Serializer.hpp"
+#include "Data.hpp"
+#include <iostream>
+
+int main(){
+	Data data = {42, "Hello, World!"};
+	Data* ptr = &data;
+
+	uintptr_t raw = Serializer::serialize(ptr);
+	Data* deserializedPtr = Serializer::deserialize(raw);
+	
+	std::cout << "Orginal pointer: " << ptr << std::endl;
+	std::cout << "Deserialized pointer: " << deserializedPtr << std::endl;
+	std::cout << "Data number: " << deserializedPtr->number << "' Text:" << deserializedPtr->text <<std::endl;
+
+	if (ptr == deserializedPtr) {
+		std::cout << "Serialization and deserialization successful!" << std::endl;
+	} else {
+		std::cout << "Serialization or deserialization failed!" << std::endl;
+	}
+	return 0;
+}

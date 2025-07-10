@@ -6,13 +6,14 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 17:55:10 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/10 19:01:29 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/10 19:51:06 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <cstdint>
+#include <stdint.h>
 #include "Data.hpp"
+
 class Serializer
 {
 public:
