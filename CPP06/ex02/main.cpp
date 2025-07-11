@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 16:03:28 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/11 17:43:33 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/11 19:58:06 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,12 @@ Write a program to test that everything works as expected.
 #include "C.hpp"
 
 int main() {
-	Base:
+	srand(time(NULL));
+	for (int i = 0; i < 10; ++i){
+		Base *basePtr = generate();
+		identify(basePtr);
+		identify(*basePtr);
+		delete basePtr;
+	}
 	return 0;
 }
