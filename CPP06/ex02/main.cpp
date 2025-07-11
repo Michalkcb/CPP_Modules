@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/06 16:03:28 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/06 16:03:44 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/11 17:43:33 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,12 @@ inside this function is forbidden.
 Including the typeinfo header is forbidden.
 Write a program to test that everything works as expected.
 */
+#include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
+
+int main() {
+	Base:
+	return 0;
+}

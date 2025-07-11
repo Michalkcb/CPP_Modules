@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/10 20:06:36 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/11 17:19:59 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/11 18:07:56 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,9 @@
 
 class Base {
 	public:
-		virtual ~Base() {}
+		virtual ~Base();
 };
+
+Base * generate(void);
+void identify(Base* p);
+void identify(Base& p);
