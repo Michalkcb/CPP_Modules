@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 11:08:26 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/12 13:25:41 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/12 13:31:57 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ max(c, d) = chaine2
 */
 
 #include <iostream>
-#include "Array.hpp"    
+#include "whatever.hpp"   
 
 
 int main( void ) {
