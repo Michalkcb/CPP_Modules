@@ -1,3 +1,5 @@
+// Copyright 2025 mbany
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -12,16 +14,15 @@
 
 #pragma once
 #include <stdint.h>
-#include "Data.hpp"
+#include "CPP06/ex01/Data.hpp"
 
-class Serializer
-{
-public:
-	static uintptr_t serialize(Data* ptr);
-	static Data* deserialize(uintptr_t raw);
-private:
-	Serializer();
-	Serializer(const Serializer& other);
-	Serializer &operator=(const Serializer &other);
-	~Serializer();
+class Serializer{
+ public:
+static uintptr_t serialize(Data* ptr);
+static Data* deserialize(uintptr_t raw);
+ private:
+Serializer();
+Serializer(const Serializer& other);
+Serializer &operator=(const Serializer &other);
+~Serializer();
 };
