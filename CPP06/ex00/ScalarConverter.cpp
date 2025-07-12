@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:55:51 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/12 14:31:05 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/12 16:39:27 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ bool isFloat(const std::string &literal) {
 		return true;
 	char* end;
 	std::strtof(literal.c_str(), &end);
-	return *(end -1) == 'f' && *end == '\0';	
+	return (*end == 'f' && *(end + 1) == '\0');
 }
 
 bool isDouble(const std::string &literal) {

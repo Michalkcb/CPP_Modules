@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 15:24:39 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/12 15:25:06 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/12 15:30:29 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,8 @@ Your iter function template must work with any type of array. The third paramete
 can be an instantiated function template.
 */
 
+#include "iter.hpp"
+
+int main() {
+	
+}
