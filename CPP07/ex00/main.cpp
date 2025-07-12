@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 11:08:26 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/12 11:08:45 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/12 13:25:41 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ These functions can be called with any type of argument. The only requirement is
 that the two arguments must have the same type and must support all the comparison
 operators.
 Templates must be defined in the header files.
-6
 C++ - Module 07 C++ templates
 Running the following code:
 int main( void ) {
@@ -58,55 +57,21 @@ max(c, d) = chaine2
 */
 
 #include <iostream>
-#include <Array.hpp>
+#include "Array.hpp"    
 
-#define MAX_VAL 750
-int main(int, char**)
-{
-    Array<int> numbers(MAX_VAL);
-    int* mirror = new int[MAX_VAL];
-    srand(time(NULL));
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        const int value = rand();
-        numbers[i] = value;
-        mirror[i] = value;
-    }
-    //SCOPE
-    {
-        Array<int> tmp = numbers;
-        Array<int> test(tmp);
-    }
 
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        if (mirror[i] != numbers[i])
-        {
-            std::cerr << "didn't save the same value!!" << std::endl;
-            return 1;
-        }
-    }
-    try
-    {
-        numbers[-2] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    try
-    {
-        numbers[MAX_VAL] = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        numbers[i] = rand();
-    }
-    delete [] mirror;//
-    return 0;
+int main( void ) {
+int a = 2;
+int b = 3;
+::swap( a, b );
+std::cout << "a = " << a << ", b = " << b << std::endl;
+std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+std::string c = "chaine1";
+std::string d = "chaine2";
+::swap(c, d);
+std::cout << "c = " << c << ", d = " << d << std::endl;
+std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+return 0;
 }
