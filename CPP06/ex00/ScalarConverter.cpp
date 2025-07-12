@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 18:55:51 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/09 19:48:13 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/12 14:23:31 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,15 @@ ScalarConverter :: ScalarConverter(const ScalarConverter&) {};
 ScalarConverter& ScalarConverter::operator=(const ScalarConverter&) { return *this;}// Prevent assignment
 ScalarConverter :: ~ScalarConverter() {};
 
+	static void convertChar(const std::string &literal);
+	static void convertInt(const std::string &literal);
+	static void convertFloat(const std::string &literal);
+	static void convertDouble(const std::string &literal);
+	static bool isChar(const std::string &literal);
+	static bool isInt(const std::string &literal);
+	static bool isFloat(const std::string &literal);
+	static bool isDouble(const std::string &literal);
+
 void ScalarConverter::convert(const std::string &literal) {
 	if (isChar(literal)) {
 		convertChar(literal);
@@ -38,17 +47,17 @@ void ScalarConverter::convert(const std::string &literal) {
 	}
 }
 
-bool ScalarConverter::isChar(const std::string &literal) {
+bool isChar(const std::string &literal) {
 	return literal.length() == 1 && isprint(literal[0]) && !isdigit(literal[0]);
 }
 
-bool ScalarConverter::isInt(const std::string &literal) {
+bool isInt(const std::string &literal) {
 	char* end;
 	long value = strtol(literal.c_str(), &end, 10);
 	return *end == '\0' && value >= std::numeric_limits<int>::min() && value <= std::numeric_limits<int>::max();
 }
 
-bool ScalarConverter::isFloat(const std::string &literal) {
+bool isFloat(const std::string &literal) {
 	if (literal == "nanf" || literal == "+inff" || literal == "-inff")
 		return true;
 	char* end;
@@ -56,7 +65,7 @@ bool ScalarConverter::isFloat(const std::string &literal) {
 	return *(end -1) == 'f' && *end == '\0';	
 }
 
-bool ScalarConverter::isDouble(const std::string &literal) {
+bool isDouble(const std::string &literal) {
 	if (literal == "nan" || literal == "+inf" || literal == "-inf")
 		return true;
 	char* end;
@@ -64,7 +73,7 @@ bool ScalarConverter::isDouble(const std::string &literal) {
 	return *end == '\0';	
 }
 
-void ScalarConverter::convertChar(const std::string &literal) {
+void convertChar(const std::string &literal) {
 	char c = literal[0];
 	std::cout << "char: '" << c << "'" << std::endl;
 	std::cout << "int: " << static_cast<int>(c) << std::endl;
@@ -72,7 +81,7 @@ void ScalarConverter::convertChar(const std::string &literal) {
 	std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(c) << std::endl;
 }
 
-void ScalarConverter::convertInt(const std::string &literal) {
+void convertInt(const std::string &literal) {
 	char* end;
 	long  l = std::strtol(literal.c_str(), &end, 10);
 	int i = static_cast<int>(l);
@@ -96,7 +105,7 @@ void ScalarConverter::convertInt(const std::string &literal) {
 	std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(i) << "\n";
 }
 
-void ScalarConverter::convertFloat(const std::string &literal) {
+void convertFloat(const std::string &literal) {
 	float f = std::strtof(literal.c_str(), NULL);
 	if (std::isnan(f) || std::isinf(f) || f < 0 || f > 127)
 		std::cout << "char: impossible\n";
@@ -112,7 +121,7 @@ void ScalarConverter::convertFloat(const std::string &literal) {
 	std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(f) << "\n";
 }
 
-void ScalarConverter::convertDouble(const std::string &literal) {
+void convertDouble(const std::string &literal) {
 	double d = std::strtod(literal.c_str(), NULL);
 	if (std::isnan(d) || std::isinf(d) || d < 0 || d > 127)
 		std::cout << "char: impossible\n";
