@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 15:24:39 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/12 15:30:29 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/13 11:24:19 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,5 @@ can be an instantiated function template.
 
 int main() {
 	
+
 }
