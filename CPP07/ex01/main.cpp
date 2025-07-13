@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 15:24:39 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/13 11:24:19 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/13 14:59:16 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,31 @@ test executable.
 Your iter function template must work with any type of array. The third parameter
 can be an instantiated function template.
 */
-
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "iter.hpp"
 
-int main() {
-	
+void printInt(int n) {
+	std::cout << n << " ";
+}
 
+void printStr(const std::string& s) {
+	std::cout << s << " ";
+}
+
+int main() {
+	int intArray[10];
+	for (int i = 0; i < 10; ++i) {
+		intArray[i] = std::rand() %1000; // Random integers between 0 and 99
+	}
+	std::string strArray[] = {"Hello", "World", "42", "Warsaw"};
+
+	iter(intArray, 3, printInt);
+	std::cout << std::endl << "-----------" << std::endl;
+
+	iter(strArray, 4, printStr);
+	std::cout << std::endl << "-----------" << std::endl;
+
+	return 0;
 }
