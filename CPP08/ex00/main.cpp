@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 18:48:57 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/15 18:49:18 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/15 20:03:37 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,28 @@ of your choice. If you need some inspiration, analyze how standard containers be
 Of course, implement and turn in your own tests to ensure everything works as expected.
 You don’t have to handle associative containers.
 */
+
+#include <iostream>
+#include <vector>
+#include "easyfind.h"
+
+int main() {
+	 int arr[] = {1, 2, 3, 4, 5};
+	std::vector<int> vec(arr, arr + 5);
+
+	try {
+		int index = easyfind(vec, 3);
+		std::cout << "Found 3 at index: " << index << std::endl;
+	} catch (const std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
+
+	try {
+		int index = easyfind(vec, 6);
+		std::cout << "Found 6 at index: " << index << std::endl;
+	} catch (const std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
+
+	return 0;
+}
