@@ -6,13 +6,19 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 11:56:40 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/19 13:12:15 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/19 16:56:12 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+#include <vector>
+#include <stdexcept>
+
 class Span {
 private:
-
+	unsigned int _maxSize;
+	std::vector<int> _numbers;
+	
 public:
 	Span();
 	Span(const Span &other);
@@ -20,7 +26,7 @@ public:
 	~Span();
 	Span(unsigned int n);
 
-	int addNumber(int number);
-	int shortestSpan();
-	int longestSpan();
+	void addNumber(int number);
+	int shortestSpan() const;
+	int longestSpan() const;
 };
