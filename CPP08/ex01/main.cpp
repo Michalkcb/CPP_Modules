@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 11:56:08 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/19 13:01:26 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/19 19:25:25 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,3 +70,28 @@ std::cout << sp.shortestSpan() << std::endl;
 std::cout << sp.longestSpan() << std::endl;
 return 0;
 }
+
+// int main()
+// {
+//     try 
+// 	{
+//         Span sp(10000);
+//         for (int i = 0; i < 5000; ++i)
+// 		{
+//             sp.addNumber(i);
+//         }
+//         std::vector<int> sp1;
+//         for (int i = 15000; i < 20000; ++i) 
+// 		{
+//             sp1.push_back(i);
+//         }
+//         sp.addNumbers(sp1.begin(), sp1.end());
+//         std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
+//         std::cout << "Longest span: " << sp.longestSpan() << std::endl;
+//     } 
+// 	catch (const std::exception& e) 
+// 	{
+//         std::cerr << e.what() << std::endl;
+//     }
+//     return 0;
+// }
