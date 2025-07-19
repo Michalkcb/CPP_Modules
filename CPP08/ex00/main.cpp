@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 18:48:57 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/19 11:04:33 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/19 11:53:05 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ You don’t have to handle associative containers.
 
 #include <iostream>
 #include <vector>
+#include <list>
 #include "easyfind.h"
 
 int main() {
@@ -39,14 +40,22 @@ int main() {
 
 	try {
 		int index = easyfind(vec, 3);
-		std::cout << "Found 3 at index: " << index << std::endl;
+		std::cout << "Found 3 in vector at index: " << index << std::endl;
+	} catch (const std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
+
+	std::list<int> lst(arr, arr + 5);
+	try {
+		int index = easyfind(lst, 4);
+		std::cout << "Found 4 in list at position: " << index << std::endl;
 	} catch (const std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
 
 	try {
 		int index = easyfind(vec, 6);
-		std::cout << "Found 6 at index: " << index << std::endl;
+		std::cout << "Found 6 in vector at index: " << index << std::endl;
 	} catch (const std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
