@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 11:56:08 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/19 11:56:17 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/19 13:01:26 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,3 +55,18 @@ If you don’t have a clue, study the Containers. Some member
 functions take a range of iterators in order to add a sequence of
 elements to the container.
 */
+#include <iostream>
+#include "Span.hpp"
+
+int main()
+{
+Span sp = Span(5);
+sp.addNumber(6);
+sp.addNumber(3);
+sp.addNumber(17);
+sp.addNumber(9);
+sp.addNumber(11);
+std::cout << sp.shortestSpan() << std::endl;
+std::cout << sp.longestSpan() << std::endl;
+return 0;
+}

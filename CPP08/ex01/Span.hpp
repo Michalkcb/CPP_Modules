@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 11:56:40 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/19 11:59:35 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/19 13:12:15 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,9 @@ public:
 	Span(const Span &other);
 	Span &operator=(const Span &other);
 	~Span();
+	Span(unsigned int n);
+
+	int addNumber(int number);
+	int shortestSpan();
+	int longestSpan();
 };
