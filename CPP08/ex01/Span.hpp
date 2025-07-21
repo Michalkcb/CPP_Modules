@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 11:56:40 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/21 16:55:02 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/21 17:06:46 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,15 @@ public:
 	Span(unsigned int n);
 
 	void addNumber(int number);
+	
 	template <typename InputIt>
-	void addNumbers(InputIt begin, InputIt end);
+	void addNumbers(InputIt begin, InputIt end) {
+		size_t count = std::distance(begin, end);
+		if (_numbers.size() + count > _maxSize) {
+			throw std::length_error("Span is full, cannot add more numbers.");
+		}
+		_numbers.insert(_numbers.end(), begin, end);
+	}
 	int shortestSpan() const;
 	int longestSpan() const;
 };

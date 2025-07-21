@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 15:35:43 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/21 16:56:52 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/21 17:03:43 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,6 @@ void Span::addNumber(int number) {
 		throw std::length_error("Span is full, cannot add more numbers.");
 	}
 	_numbers.push_back(number);
-}
-template <typename InputIt>
-void Span::addNumbers(InputIt begin, InputIt end) {
-	size_t count = std::distance(begin, end);
-	if (_numbers.size() + count > _maxSize) {
-		throw std::length_error("Span is full, cannot add more numbers.");
-	}
-	_numbers.insert(numbers.end(), begin, end);
 }
 
 int Span::shortestSpan() const {
