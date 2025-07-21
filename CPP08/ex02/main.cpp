@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 18:16:56 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/21 18:17:53 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/21 18:18:23 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ Write a MutantStack class. It will be implemented in terms of a std::stack.
 It will offer all its member functions, plus an additional feature: iterators.
 Of course, you will write and turn in your own tests to ensure everything works as
 expected.
-10
 C++ - Module 08 Templated containers, iterators, algorithms
 Find a test example below.
 int main()
