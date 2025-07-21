@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 11:56:40 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/19 16:56:12 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/21 16:55:02 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ public:
 	Span(unsigned int n);
 
 	void addNumber(int number);
+	template <typename InputIt>
+	void addNumbers(InputIt begin, InputIt end);
 	int shortestSpan() const;
 	int longestSpan() const;
 };
