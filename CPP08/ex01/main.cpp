@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 11:56:08 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/21 16:59:29 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/21 18:09:23 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,12 +90,16 @@ int main()
     }
 
     // Test masowego dodawania przez iteratory
-    Span sp3(10000);
-    std::vector<int> vec;
-    for (int i = 0; i < 10000; ++i)
-        vec.push_back(i * 2);
-    sp3.addNumbers(vec.begin(), vec.end());
-    std::cout << "sp3 shortestSpan: " << sp3.shortestSpan() << std::endl; // powinno być 2
-    std::cout << "sp3 longestSpan: " << sp3.longestSpan() << std::endl;   // powinno być 19998
+	try {
+		Span sp3(5);
+		std::vector<int> vec;
+		for (int i = 0; i < 10000; ++i)
+			vec.push_back(i * 2);
+		sp3.addNumbers(vec.begin(), vec.end());
+		std::cout << "sp3 shortestSpan: " << sp3.shortestSpan() << std::endl; // powinno być 2
+		std::cout << "sp3 longestSpan: " << sp3.longestSpan() << std::endl;   // powinno być 19998
+	} catch (const std::exception& e) {
+		std::cout << "Exception (too many numbers): " << e.what() << std::endl;
+	}
 
 }
