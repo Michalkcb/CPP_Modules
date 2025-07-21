@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 18:16:56 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/21 18:18:23 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/21 18:31:09 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ MutantStack with, for example, a std::list, the two outputs should be the same. 
 course, when testing another container, update the code below with the corresponding
 member functions (push() can become push_back()).
 */
+#include <iostream>
+#include "MutantStack.hpp"
 
 int main()
 {
