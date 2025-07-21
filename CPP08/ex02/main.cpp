@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 18:16:56 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/21 18:31:09 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/21 19:45:07 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,29 @@ std::cout << *it << std::endl;
 ++it;
 }
 std::stack<int> s(mstack);
+
+//---
+// Test empty stack
+// MutantStack<int> emptyStack;
+// std::cout << "Empty stack size: " << emptyStack.size() << std::endl;
+// if (emptyStack.begin() == emptyStack.end())
+// {
+// 	std::cout << "Empty stack iterators are equal (begin == end)." << std::endl;
+// }
+// // Test large stack
+// MutantStack<int> largeStack;
+// for (int i = 0; i < 1000; ++i)
+// {
+// 	largeStack.push(i);
+// }
+// std::cout << "Large stack size: " << largeStack.size() << std::endl;
+// std::cout << "First 10 elements of large stack:" << std::endl;
+// MutantStack<int>::iterator largeIt = largeStack.begin();
+// for (int i = 0; i < 10 && largeIt != largeStack.end(); ++i, ++largeIt)
+// {
+// 	std::cout << *largeIt << std::endl;
+// }
+
+//---------------
 return 0;
 }
