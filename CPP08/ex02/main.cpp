@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 18:16:56 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/21 19:45:07 by mbany            ###   ########.fr       */
+/*   Updated: 2025/07/29 17:44:06 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,27 +86,44 @@ std::cout << *it << std::endl;
 }
 std::stack<int> s(mstack);
 
-//---
+//--- MORE TESTS ---
 // Test empty stack
-// MutantStack<int> emptyStack;
-// std::cout << "Empty stack size: " << emptyStack.size() << std::endl;
-// if (emptyStack.begin() == emptyStack.end())
-// {
-// 	std::cout << "Empty stack iterators are equal (begin == end)." << std::endl;
-// }
-// // Test large stack
-// MutantStack<int> largeStack;
-// for (int i = 0; i < 1000; ++i)
-// {
-// 	largeStack.push(i);
-// }
-// std::cout << "Large stack size: " << largeStack.size() << std::endl;
-// std::cout << "First 10 elements of large stack:" << std::endl;
-// MutantStack<int>::iterator largeIt = largeStack.begin();
-// for (int i = 0; i < 10 && largeIt != largeStack.end(); ++i, ++largeIt)
-// {
-// 	std::cout << *largeIt << std::endl;
-// }
+MutantStack<int> emptyStack;
+std::cout << "Empty stack size: " << emptyStack.size() << std::endl;
+if (emptyStack.begin() == emptyStack.end())
+{
+	std::cout << "Empty stack iterators are equal (begin == end)." << std::endl;
+}
+// Test large stack
+MutantStack<int> largeStack;
+for (int i = 0; i < 1000; ++i)
+{
+	largeStack.push(i);
+}
+std::cout << "Large stack size: " << largeStack.size() << std::endl;
+std::cout << "First 10 elements of large stack:" << std::endl;
+MutantStack<int>::iterator largeIt = largeStack.begin();
+for (int i = 0; i < 10 && largeIt != largeStack.end(); ++i, ++largeIt)
+{
+	std::cout << *largeIt << std::endl;
+}
+// Test copy constructor and assignment
+MutantStack<int> copyStack(mstack);
+std::cout << "Copy stack size: " << copyStack.size() << std::endl;
+MutantStack<int> assignStack;
+assignStack = mstack;
+std::cout << "Assign stack size: " << assignStack.size() << std::endl;
+
+// Test const_iterator
+const MutantStack<int> constStack(mstack);
+MutantStack<int>::const_iterator cit = constStack.begin();
+MutantStack<int>::const_iterator cite = constStack.end();
+std::cout << "Const iterator test:" << std::endl;
+while (cit != cite)
+{
+    std::cout << *cit << std::endl;
+    ++cit;
+}
 
 //---------------
 return 0;
