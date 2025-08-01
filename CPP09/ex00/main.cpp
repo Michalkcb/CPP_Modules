@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 19:57:14 by mbany             #+#    #+#             */
-/*   Updated: 2025/08/01 19:49:26 by mbany            ###   ########.fr       */
+/*   Updated: 2025/08/01 19:52:49 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ int main (int ac, char **av){
 	}
 
 	std::string line;
+	if (std::getline(inputFile, line)) {}
 	while (std::getline(inputFile, line)) {
 		std::cout << line << std::endl;
 	}
