@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 19:57:14 by mbany             #+#    #+#             */
-/*   Updated: 2025/07/21 19:57:24 by mbany            ###   ########.fr       */
+/*   Updated: 2025/08/01 19:45:52 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,3 +70,23 @@ Warning: The container(s) you use to validate this exercise will no
 longer be usable for the rest of this module.
 
 */
+#include <iostream>
+#include <string>
+#include <fstream>
+
+int main (int ac, char **av){
+	if (ac != 2){
+		std::cout << "Error: could not open file." << std::endl;
+		return 1;
+	}
+
+	std::ifstream inputFile(av[1]);
+	if (!inputFile.is_open()) {
+		std::cout << "Error: could not open file." << std::endl;
+		return 1;
+	}
+	
+	inputFile.close();
+	
+	return 0;
+}
