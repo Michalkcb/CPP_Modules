@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 19:57:14 by mbany             #+#    #+#             */
-/*   Updated: 2025/08/01 19:52:49 by mbany            ###   ########.fr       */
+/*   Updated: 2025/08/01 20:01:21 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,15 @@ int main (int ac, char **av){
 	std::string line;
 	if (std::getline(inputFile, line)) {}
 	while (std::getline(inputFile, line)) {
-		std::cout << line << std::endl;
+		size_t sep = line.find(" | ");
+		if (sep == std::string::npos) {
+			std::cout << "Error: bad input => " << line << std::endl;
+			continue;
+		}
+		std::string date = line.substr(0, sep);
+		std::string valueStr = line.substr(sep + 3);
+		
+		std::cout << "DATA: " << date << " VALUE: " << valueStr << std::endl;
 	}
 	
 	inputFile.close();
