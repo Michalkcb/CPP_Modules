@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 19:57:14 by mbany             #+#    #+#             */
-/*   Updated: 2025/08/28 19:17:12 by mbany            ###   ########.fr       */
+/*   Updated: 2025/08/28 19:54:07 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,13 @@ int main (int ac, char **av){
 		std::cout << "Error: could not open file." << std::endl;
 		return 1;
 	}
-
+	
+	std::map<std::string, double> exchangeRates;
+	if (!loadExchangeRates("data.csv", exchangeRates)) {
+		std::cout << "Error: could not open file." << std::endl;
+		return 1;
+	}
+	
 	std::ifstream inputFile(av[1]);
 	if (!inputFile.is_open()) {
 		std::cout << "Error: could not open file." << std::endl;
@@ -94,30 +100,25 @@ int main (int ac, char **av){
 		}
 		std::string date = line.substr(0, sep);
 		std::string valueStr = line.substr(sep + 3);
-
+		
 		if (!isValidDate(date)) {
 			std::cout << "Error: bad input => " << line << std::endl;
 			continue;
 		}
-
+		
 		double value;
 		if (!isValidValue(valueStr, value)) {
 			if (atof(valueStr.c_str()) <= 0)
-				std::cout << "Error: not a positive number." << std::endl;
+			std::cout << "Error: not a positive number." << std::endl;
 			else if (atof(valueStr.c_str()) > 1000)
-				std::cout << "Error: too large a number." << std::endl;
+			std::cout << "Error: too large a number." << std::endl;
 			else
-				std::cout << "Error: bad input => " << line << std::endl;
+			std::cout << "Error: bad input => " << line << std::endl;
 			continue;
 		}
+		processLine(date, value, exchangeRates);
 		
-		std::cout << "DATA: " << date << " VALUE: " << valueStr << std::endl;
-	}
-
-	std::map<std::string, double> exchangeRates;
-	if (!loadExchangeRates("data.csv", exchangeRates)) {
-		std::cout << "Error: could not open file." << std::endl;
-		return 1;
+		// std::cout << "DATA: " << date << " VALUE: " << valueStr << std::endl;
 	}
 	
 	inputFile.close();
