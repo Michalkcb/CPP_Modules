@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 19:57:14 by mbany             #+#    #+#             */
-/*   Updated: 2025/08/01 20:01:21 by mbany            ###   ########.fr       */
+/*   Updated: 2025/08/28 18:39:06 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ longer be usable for the rest of this module.
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "BitcoinExchange.hpp"
 
 int main (int ac, char **av){
 	if (ac != 2){
@@ -96,6 +97,11 @@ int main (int ac, char **av){
 		}
 		std::string date = line.substr(0, sep);
 		std::string valueStr = line.substr(sep + 3);
+
+		if (!isValidDate(date)) {
+			std::cout << "Error: bad input => " << line << std::endl;
+			continue;
+		}
 		
 		std::cout << "DATA: " << date << " VALUE: " << valueStr << std::endl;
 	}
