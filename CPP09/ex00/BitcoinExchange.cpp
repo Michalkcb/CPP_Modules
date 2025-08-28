@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 18:31:09 by mbany             #+#    #+#             */
-/*   Updated: 2025/08/28 19:07:01 by mbany            ###   ########.fr       */
+/*   Updated: 2025/08/28 19:16:05 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,23 @@ bool isValidValue(const std::string& valueStr, double& value) {
         return false;
     if (value > 1000)
         return false;
+    return true;
+}
+
+bool loadExchangeRates(const std::string& filename, std::map<std::string, double>& exchangeRates) {
+    std::ifstream dbFile(filename.c_str());
+    if (!dbFile.is_open())
+        return false;
+    std::string dbLine;
+    if (std::getline(dbFile, dbLine)) {} // pomiń nagłówek
+    while (std::getline(dbFile, dbLine)) {
+        std::istringstream iss(dbLine);
+        std::string date, rateStr;
+        if (std::getline(iss, date, ',') && std::getline(iss, rateStr)) {
+            exchangeRates[date] = atof(rateStr.c_str());
+        }
+    }
+    dbFile.close();
     return true;
 }
 
