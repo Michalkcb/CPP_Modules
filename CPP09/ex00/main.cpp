@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 19:57:14 by mbany             #+#    #+#             */
-/*   Updated: 2025/08/28 18:39:06 by mbany            ###   ########.fr       */
+/*   Updated: 2025/08/28 19:07:34 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,6 @@ Warning: The container(s) you use to validate this exercise will no
 longer be usable for the rest of this module.
 
 */
-#include <iostream>
-#include <string>
-#include <fstream>
 #include "BitcoinExchange.hpp"
 
 int main (int ac, char **av){
@@ -100,6 +97,17 @@ int main (int ac, char **av){
 
 		if (!isValidDate(date)) {
 			std::cout << "Error: bad input => " << line << std::endl;
+			continue;
+		}
+
+		double value;
+		if (!isValidValue(valueStr, value)) {
+			if (atof(valueStr.c_str()) <= 0)
+				std::cout << "Error: not a positive number." << std::endl;
+			else if (atof(valueStr.c_str()) > 1000)
+				std::cout << "Error: too large a number." << std::endl;
+			else
+				std::cout << "Error: bad input => " << line << std::endl;
 			continue;
 		}
 		

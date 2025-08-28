@@ -6,14 +6,13 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 18:31:09 by mbany             #+#    #+#             */
-/*   Updated: 2025/08/28 18:44:00 by mbany            ###   ########.fr       */
+/*   Updated: 2025/08/28 19:07:01 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-#include <cctype>
-#include <cstdlib>
+
 
 bool isValidDate(const std::string& date) {
     if (date.length() != 10)
@@ -37,3 +36,16 @@ bool isValidDate(const std::string& date) {
         return false;
     return true;
 }
+
+bool isValidValue(const std::string& valueStr, double& value) {
+    char* endptr = NULL;
+    value = std::strtod(valueStr.c_str(), &endptr);
+    if (*endptr != '\0') // nie całość jest liczbą
+        return false;
+    if (value <= 0)
+        return false;
+    if (value > 1000)
+        return false;
+    return true;
+}
+
