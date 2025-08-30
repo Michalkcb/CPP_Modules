@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 10:57:46 by mbany             #+#    #+#             */
-/*   Updated: 2025/08/30 16:03:28 by mbany            ###   ########.fr       */
+/*   Updated: 2025/08/30 17:22:18 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 #include <iostream>
 #include <vector>
 #include <deque>
+#include <cstdlib>  // dla atoi(), strtol()
+#include <climits> // dla INT_MAX
 
 class PmergeMe {
 	private:
