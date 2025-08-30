@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 10:30:45 by mbany             #+#    #+#             */
-/*   Updated: 2025/08/30 10:30:52 by mbany            ###   ########.fr       */
+/*   Updated: 2025/08/30 11:24:21 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ on the standard error.
 You must use at least two different containers in your code to
 validate this exercise. Your program must be able to handle at
 least 3000 different integers.
-11
 C++ - Module 09 STL
 It is strongly advised to implement your algorithm for each container
 and thus to avoid using a generic function.
