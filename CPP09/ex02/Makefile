@@ -6,12 +6,13 @@
 #    By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/26 17:05:48 by mbany             #+#    #+#              #
-#    Updated: 2025/08/31 12:48:21 by mbany            ###   ########.fr        #
+#    Updated: 2025/08/30 16:24:20 by mbany            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PmergeMe
 SRC = main.cpp \
+	PmergeMe.cpp\
 
 # Object files
 OBJDIR = obj

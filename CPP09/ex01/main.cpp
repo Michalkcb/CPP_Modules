@@ -6,27 +6,44 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 10:57:46 by mbany             #+#    #+#             */
-/*   Updated: 2025/08/30 16:23:28 by mbany            ###   ########.fr       */
+/*   Updated: 2025/08/31 12:51:55 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PmergeMe.hpp"
+/*
 
-int main (int ac, char** av){
-	if (ac < 2) {
-		std::cerr << "Error" << std::endl;
-		return 1;
-	}
-	
-	try {
-		PmergeMe sorter;
-		sorter.processInput(ac, av);
-		sorter.run();
-	}
+Exercise 01: Reverse Polish Notation
+Exercise : 01
+RPN
+Turn-in directory : ex01/
+Files to turn in : Makefile, main.cpp, RPN.{cpp, hpp}
+Forbidden functions : None
+You must create a program with these constraints:
+• The program name is RPN.
+• Your program must take an inverted Polish mathematical expression as an argument.
+• The numbers used in this operation and passed as arguments will always be less
+than 10. The calculation itself but also the result do not take into account this rule.
+• Your program must process this expression and output the correct result on the
+standard output.
+• If an error occurs during the execution of the program an error message should be
+displayed on the standard error.
+• Your program must be able to handle operations with these tokens: "+ - / *".
+You must use at least one container in your code to validate this
+exercise.
+C++ - Module 09 STL
+You don’t need to manage the brackets or decimal numbers.
+Here is an example of a standard use:
+$> ./RPN "8 9 * 9 - 9 - 9 - 4 - 1 +"
+42
+$> ./RPN "7 7 * 7 -"
+42
+$> ./RPN "1 2 * 2 / 2 * 2 4 - +"
+0
+$> ./RPN "(1 + 1)"
+Error
+$>
+Warning: The container(s) you used in the previous exercise are
+forbidden here. The container(s) you used to validate this exercise
+will not be usable for the rest of this module.
 
-	catch (const std::exception& e) {
-		std::cerr << "Error" << std::endl;
-		return 1;
-	}
-	return 0;
-}
+*/
