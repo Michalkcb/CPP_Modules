@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 10:57:46 by mbany             #+#    #+#             */
-/*   Updated: 2025/08/31 11:41:18 by mbany            ###   ########.fr       */
+/*   Updated: 2025/08/31 14:15:28 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,10 @@ class PmergeMe {
 		
 		void processInput(int argc, char** argv);
 		void run();	
+		// Ford-Johnson algorithm functions
+		std::vector<int> generateJacobsthal(int n);
+		void fordJohnsonSort(std::vector<int>& container);
+		int binarySearch(const std::vector<int>&arr, int target, int left, int right);
+		
 };
 

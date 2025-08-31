@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 10:57:46 by mbany             #+#    #+#             */
-/*   Updated: 2025/08/31 11:44:27 by mbany            ###   ########.fr       */
+/*   Updated: 2025/08/31 14:32:35 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,12 @@ void PmergeMe::processInput(int argc, char ** argv) {
 
 void PmergeMe::run() {
 	printSequence("Before: ", _vectorData);
-	printSequence("After: ", _vectorData);
+	
+	//copy and sort
+	std::vector<int> sortData = _vectorData;
+	fordJohnsonSort(sortData);
+	
+	printSequence("After: ", sortData);
 }
 
 void PmergeMe::printSequence(const std::string& prefix, const std::vector<int>& container) {
@@ -66,4 +71,45 @@ void PmergeMe::printSequence(const std::string& prefix, const std::vector<int>& 
 		}
 	}
 	std::cout << std::endl;
+}
+
+std::vector<int> PmergeMe::generateJacobsthal(int n) {
+	std::vector<int> jacobsthal;
+	if (n <= 0) return jacobsthal;
+	
+	jacobsthal.push_back(0);
+	if (n > 1) jacobsthal.push_back(1);
+
+	for (int i = 2; i < n; ++i) {
+		int next = jacobsthal[i-1] + 2 * jacobsthal[i-2];
+		if (next > n) break;
+		jacobsthal.push_back(next);
+	}
+	return jacobsthal;
+}
+
+void PmergeMe::fordJohnsonSort(std::vector<int>& container) {
+	if (container.size() <= 1)
+		return;
+	if (container.size() == 2) {
+		if (container[0] > container[1])
+			std::swap(container[0], container[1]);
+		return;
+	}
+	for (size_t i = 0; i < container.size() - 1; i++)
+		for (size_t j = 0; j < container.size() - 1 - i; j++)
+			if (container[j] > container[j + 1])
+				std::swap(container[j], container[j + 1]);
+
+}
+
+int PmergeMe::binarySearch(const std::vector<int>& arr, int target, int left, int right) {
+	while ( left <right) {
+		int mid = left + (right - left) / 2;
+		if (arr[mid] < target)
+			left = mid + 1;
+		else
+			right = mid;
+	}
+	return left;
 }
