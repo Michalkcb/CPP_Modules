@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 10:57:46 by mbany             #+#    #+#             */
-/*   Updated: 2025/08/30 17:42:01 by mbany            ###   ########.fr       */
+/*   Updated: 2025/08/31 11:44:27 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,20 @@ void PmergeMe::processInput(int argc, char ** argv) {
 		_vectorData.push_back(value);
 		_dequeData.push_back(value);
 	}
-	std::cout << "Successfully processed " << _vectorData.size() << " members" << std::endl;
 }
 
 void PmergeMe::run() {
-	std::cout << "Running PmergeMe..." << std::endl;
+	printSequence("Before: ", _vectorData);
+	printSequence("After: ", _vectorData);
+}
+
+void PmergeMe::printSequence(const std::string& prefix, const std::vector<int>& container) {
+	std::cout << prefix;
+	for (size_t i = 0; i < container.size(); i++) {
+		std::cout << container[i];
+		if (i < container.size() -1) {
+			std::cout << " ";
+		}
+	}
+	std::cout << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 10:57:46 by mbany             #+#    #+#             */
-/*   Updated: 2025/08/30 17:22:18 by mbany            ###   ########.fr       */
+/*   Updated: 2025/08/31 11:41:18 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class PmergeMe {
 	private:
 		std::vector<int> _vectorData;
 		std::deque<int> _dequeData;
+		
+		void printSequence(const std::string& prefix, const std::vector<int>& container);
 	public:
 		PmergeMe();
 		PmergeMe(const PmergeMe& other);
@@ -35,3 +37,4 @@ class PmergeMe {
 		void processInput(int argc, char** argv);
 		void run();	
 };
+
