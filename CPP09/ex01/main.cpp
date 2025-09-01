@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 10:57:46 by mbany             #+#    #+#             */
-/*   Updated: 2025/08/31 12:51:55 by mbany            ###   ########.fr       */
+/*   Updated: 2025/09/01 20:11:23 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,3 +47,24 @@ forbidden here. The container(s) you used to validate this exercise
 will not be usable for the rest of this module.
 
 */
+
+#include "RPN.hpp"
+
+int main (int ac, char* av[]) {
+	if (ac != 2) {
+		std::cerr << "Usage: ./RPN \"expression\"" <<std::endl;
+		return 1;
+	}
+	
+	try {
+		RPN calculator;
+		int result = calculator.evaluate(av[1]);
+		std::cout << result << std::endl;
+	}
+	
+	catch (const std::exception& e) {
+		std::cerr << "Error" << std::endl;
+		return 1;
+	}
+	return 0;
+}
