@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 18:31:09 by mbany             #+#    #+#             */
-/*   Updated: 2025/08/28 19:45:13 by mbany            ###   ########.fr       */
+/*   Updated: 2025/09/02 19:39:15 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ void processLine(const std::string& date, double value, const std::map<std::stri
     std::map<std::string, double>::const_iterator it = exchangeRates.lower_bound(date);
     if (it == exchangeRates.end() || it->first != date) {
         if (it == exchangeRates.begin()) {
-            std::cout << "Error: no exchange rate for date " << date << std::endl;
             return;
         }
         --it; // najbliższa wcześniejsza data
