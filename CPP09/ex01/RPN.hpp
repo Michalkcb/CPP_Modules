@@ -6,15 +6,15 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:03:24 by mbany             #+#    #+#             */
-/*   Updated: 2025/09/01 20:08:06 by mbany            ###   ########.fr       */
+/*   Updated: 2025/09/06 15:00:30 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <stack>
-#include <vector>
-#include <sstream>
-#include <iostream>
+#include <string>     // dla std::string
+#include <stack>      // dla std::stack<int> - stos do obliczeń
+#include <vector>     // dla std::vector<std::string> - lista tokenów
+#include <sstream>    // dla parsowania stringów
+#include <iostream>   // dla wypisywania błędów
 
 class RPN{
 	
