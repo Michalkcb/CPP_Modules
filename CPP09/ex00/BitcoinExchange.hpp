@@ -6,18 +6,18 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 18:31:09 by mbany             #+#    #+#             */
-/*   Updated: 2025/08/28 19:45:21 by mbany            ###   ########.fr       */
+/*   Updated: 2025/09/06 12:00:32 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <string>
-#include <cctype>
-#include <cstdlib>
-#include <iostream>
-#include <fstream>
-#include <map>
-#include <sstream>
+#include <string>		// std::string
+#include <cctype>		// isdigit(), funkcje dla znaków
+#include <cstdlib>		// atoi(), strtol(), konwersje
+#include <iostream>		// std::cout, std::cerr
+#include <fstream>		// std::ifstream - czytanie plików
+#include <map>			// std::map<string, double> - kontener dla kursów
+#include <sstream>		// std::istringstream - parsowanie stringów
 
 
 bool isValidDate(const std::string& date);
