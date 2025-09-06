@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 18:31:09 by mbany             #+#    #+#             */
-/*   Updated: 2025/09/02 19:39:15 by mbany            ###   ########.fr       */
+/*   Updated: 2025/09/06 13:22:43 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,10 @@ bool loadExchangeRates(const std::string& filename, std::map<std::string, double
     std::ifstream dbFile(filename.c_str());
     if (!dbFile.is_open())
         return false;
+        
     std::string dbLine;
     if (std::getline(dbFile, dbLine)) {} // pomiń nagłówek
+    
     while (std::getline(dbFile, dbLine)) {
         std::istringstream iss(dbLine);
         std::string date, rateStr;
