@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 10:57:46 by mbany             #+#    #+#             */
-/*   Updated: 2025/09/01 17:59:03 by mbany            ###   ########.fr       */
+/*   Updated: 2025/09/06 16:33:30 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 
 #pragma once
 
-#include <iostream>
-#include <vector>
-#include <deque>
-#include <cstdlib>  // dla atoi(), strtol()
-#include <climits> // dla INT_MAX
-#include <ctime> 
+#include <iostream>   // std::cout, std::endl
+#include <vector>     // std::vector<int> - pierwszy kontener
+#include <deque>      // std::deque<int> - drugi kontener  
+#include <cstdlib>    // atoi(), strtol() - konwersja stringów na liczby
+#include <climits>    // INT_MAX - sprawdzanie overflow
+#include <ctime>      // clock() - pomiar czasu wykonania
 
 class PmergeMe {
 	private:
