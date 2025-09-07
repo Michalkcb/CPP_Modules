@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 10:57:46 by mbany             #+#    #+#             */
-/*   Updated: 2025/09/07 14:30:49 by mbany            ###   ########.fr       */
+/*   Updated: 2025/09/07 15:14:41 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,15 +131,17 @@ void PmergeMe::fordJohnsonSort(std::vector<int>& container) {
 		// size_t pos = 0;
 		// while (pos < result.size() && result[pos] < smaller)
 		// 	pos++;
-		auto it = std::lower_bound(result.begin(), result.end(), smaller);
+		std::vector<int>::iterator it = std::lower_bound(result.begin(), result.end(), smaller);
 		size_t pos = std::distance(result.begin(), it);
 		result.insert(result.begin() + pos, smaller);
 	}
 
 	if (hasOdd) {
-		size_t pos = 0;
-		while (pos < result.size() && result[pos] < oddElement)
-			pos++;
+		std::vector<int>::iterator it = std::lower_bound(result.begin(), result.end(), oddElement);
+    	size_t pos = std::distance(result.begin(), it);
+		// size_t pos = 0;
+		// while (pos < result.size() && result[pos] < oddElement)
+		// 	pos++;
 		result.insert(result.begin() + pos, oddElement);
 	}
 	container = result;
@@ -188,9 +190,11 @@ void PmergeMe::fordJohnsonSortDeque(std::deque<int>& container) {
 	std::deque<int> result = larger;
 	for (size_t i = 0; i < pairs.size(); i++) {
 		int smaller = pairs[i].first;
-		size_t pos = 0;
-		while (pos < result.size() && result[pos] < smaller)
-			pos++;
+		std::deque<int>::iterator it = std::lower_bound(result.begin(), result.end(), smaller);
+    	size_t pos = std::distance(result.begin(), it);
+		// size_t pos = 0;
+		// while (pos < result.size() && result[pos] < smaller)
+		// 	pos++;
 		result.insert(result.begin() + pos, smaller);
 	}
 
@@ -198,7 +202,7 @@ void PmergeMe::fordJohnsonSortDeque(std::deque<int>& container) {
 		// size_t pos = 0;
 		// while (pos < result.size() && result[pos] < oddElement)
 		// 	pos++;
-		auto it = std::lower_bound(result.begin(), result.end(), oddElement);
+		std::deque<int>::iterator it = std::lower_bound(result.begin(), result.end(), oddElement);
 		size_t pos = std::distance(result.begin(), it);
 		result.insert(result.begin() + pos, oddElement);
 	}
