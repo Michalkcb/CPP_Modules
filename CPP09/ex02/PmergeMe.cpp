@@ -6,7 +6,7 @@
 /*   By: mbany <mbany@student.42warsaw.pl>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 10:57:46 by mbany             #+#    #+#             */
-/*   Updated: 2025/08/31 16:37:59 by mbany            ###   ########.fr       */
+/*   Updated: 2025/09/07 14:30:49 by mbany            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 PmergeMe::PmergeMe() {}
 
-PmergeMe::PmergeMe(const PmergeMe& other) : _vectorData(other._vectorData), _dequeData(other._dequeData) {
-	
-}
+PmergeMe::PmergeMe(const PmergeMe& other) : _vectorData(other._vectorData), _dequeData(other._dequeData) {}
 
 PmergeMe& PmergeMe::operator=(const PmergeMe& other) {
 	if (this != &other) {
@@ -130,9 +128,11 @@ void PmergeMe::fordJohnsonSort(std::vector<int>& container) {
 	std::vector<int> result = larger;
 	for (size_t i = 0; i < pairs.size(); i++) {
 		int smaller = pairs[i].first;
-		size_t pos = 0;
-		while (pos < result.size() && result[pos] < smaller)
-			pos++;
+		// size_t pos = 0;
+		// while (pos < result.size() && result[pos] < smaller)
+		// 	pos++;
+		auto it = std::lower_bound(result.begin(), result.end(), smaller);
+		size_t pos = std::distance(result.begin(), it);
 		result.insert(result.begin() + pos, smaller);
 	}
 
@@ -195,9 +195,11 @@ void PmergeMe::fordJohnsonSortDeque(std::deque<int>& container) {
 	}
 
 	if (hasOdd) {
-		size_t pos = 0;
-		while (pos < result.size() && result[pos] < oddElement)
-			pos++;
+		// size_t pos = 0;
+		// while (pos < result.size() && result[pos] < oddElement)
+		// 	pos++;
+		auto it = std::lower_bound(result.begin(), result.end(), oddElement);
+		size_t pos = std::distance(result.begin(), it);
 		result.insert(result.begin() + pos, oddElement);
 	}
 	container = result;
